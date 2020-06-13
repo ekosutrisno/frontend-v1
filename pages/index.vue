@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container font-sans">
     <div>
       <logo />
       <h1 class="title">
@@ -8,14 +8,19 @@
       <h2 class="subtitle">
         Refaktor Xsis v2.0 Using Vue Js Frontend
       </h2>
+      <div class="my-3 flex justify-center">
+        <ColorModePicker />
+      </div>
       <div class="links">
         <nuxt-link
           to="/"
           class="button--green"
+          v-tooltip="{ content: 'Cakupan wilayah', classes: 'text-sm' }"
         >
-          Home
+          Home <i class="fa fa-fw fa-user-graduate"></i>
         </nuxt-link>
         <nuxt-link
+          v-tooltip="{ content: 'Cakupan wilayah', classes: 'text-sm' }"
           to="/employee"
           class="button--green"
         >
@@ -36,22 +41,56 @@
         <nuxt-link
           to="/profile"
           class="button--grey"
+          v-tooltip="{ content: 'Cakupan wilayah', classes: 'text-sm' }"
         >
           Profile
         </nuxt-link>
+        <button
+          @click="showToas"
+          class="button--grey focus:outline-none"
+          v-tooltip="{ content: 'Testing Toas', classes: 'text-sm' }"
+        >
+          Testing Toas
+        </button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import Logo from '@/components/Logo.vue';
+import ColorModePicker from '@/components/ColorModePicker.vue';
 
 export default {
   components: {
-    Logo
+    Logo,
+    ColorModePicker
+  },
+  methods: {
+    showToas() {
+      this.$toasted.show('Terjadi kesalahan pada saat Cek', {
+        action: [
+          {
+            text: 'Cancel',
+            onClick: (e, toastObject) => {
+              toastObject.goAway(0);
+            }
+          },
+          {
+            text: 'Go to employee',
+            onClick: (e, toastObject) => {
+              this.$router.push('/employee');
+            }
+          }
+        ],
+        position: 'top-right',
+        icon: 'fa-gift',
+        duration: 3000,
+        keepOnHover: true
+      });
+    }
   }
-}
+};
 </script>
 
 <style>
@@ -65,11 +104,7 @@ export default {
 }
 
 .title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   display: block;
-  font-weight: 300;
-  font-size: 100px;
   color: #35495e;
   letter-spacing: 1px;
 }
