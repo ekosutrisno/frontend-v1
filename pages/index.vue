@@ -9,20 +9,36 @@
         Refaktor Xsis v2.0 Using Vue Js Frontend
       </h2>
       <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
+        <nuxt-link
+          to="/"
           class="button--green"
         >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
+          Home
+        </nuxt-link>
+        <nuxt-link
+          to="/employee"
+          class="button--green"
+        >
+          Employee
+        </nuxt-link>
+        <nuxt-link
+          to="/schedule"
+          class="button--green"
+        >
+          Schedule
+        </nuxt-link>
+        <nuxt-link
+          to="/invitation"
           class="button--grey"
         >
-          GitHub
-        </a>
+          Undangan
+        </nuxt-link>
+        <nuxt-link
+          to="/profile"
+          class="button--grey"
+        >
+          Profile
+        </nuxt-link>
       </div>
     </div>
   </div>
@@ -39,11 +55,6 @@ export default {
 </script>
 
 <style>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-  @apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
 .container {
   margin: 0 auto;
   min-height: 100vh;
