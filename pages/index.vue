@@ -15,35 +15,15 @@
         <nuxt-link
           to="/"
           class="button--green"
-          v-tooltip="{ content: 'Cakupan wilayah', classes: 'text-sm' }"
         >
-          Home <i class="fa fa-fw fa-user-graduate"></i>
+          Home
         </nuxt-link>
         <nuxt-link
-          v-tooltip="{ content: 'Cakupan wilayah', classes: 'text-sm' }"
           to="/employee"
           class="button--green"
+          v-tooltip="{ content: 'Go to employee page', classes: 'text-sm' }"
         >
-          Employee
-        </nuxt-link>
-        <nuxt-link
-          to="/schedule"
-          class="button--green"
-        >
-          Schedule
-        </nuxt-link>
-        <nuxt-link
-          to="/invitation"
-          class="button--grey"
-        >
-          Undangan
-        </nuxt-link>
-        <nuxt-link
-          to="/profile"
-          class="button--grey"
-          v-tooltip="{ content: 'Cakupan wilayah', classes: 'text-sm' }"
-        >
-          Profile
+          Employee <i class="fa fa-fw fa-user-graduate"></i>
         </nuxt-link>
         <button
           @click="showToas"

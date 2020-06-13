@@ -23,7 +23,23 @@ module.exports = {
          serif: ['Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
          mono: ['Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace'],
       },
-      extend: {},
+      extend: {
+         colors: {
+            'covid-gray': '#FCFCFD',
+            'covid-gray-01': '#FBF9FC',
+            'covid-gray-bg0': '#8dc1c1',
+            'covid-gray-bg1': '#a6bebd',
+            'covid-gray-bg2': '#75a9a8',
+            'covid-black': '#404B53',
+            'covid-green': '#01B075',
+         },
+         spacing: {
+            '36': '9rem',
+            '70': '18rem',
+            '72': '22rem',
+
+         },
+      },
    },
    variants: {
       transform: ['responsive', 'group-hover'],

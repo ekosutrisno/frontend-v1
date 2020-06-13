@@ -7,6 +7,27 @@
 /* purgecss end ignore */
 @import 'tailwindcss/utilities';
 
+.btn {
+   @apply py-2;
+   @apply px-4;
+   @apply text-left;
+   @apply w-full;
+   @apply text-covid-black;
+   @apply rounded-md;
+   @apply font-bold;
+   @apply transition-colors;
+   @apply duration-150;
+}
+
+.btn:focus {
+   @apply outline-none;
+}
+
+.btn:hover {
+   @apply bg-covid-green;
+   @apply text-covid-gray;
+}
+
 /*Start Custom */
 .origin-top-right {
    transform-origin: top right;

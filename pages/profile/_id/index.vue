@@ -1,11 +1,11 @@
 <template>
   <div>
-    <h1>Profile page</h1>
+    {{this.$router.params}}
   </div>
 </template>
 
 <script>
-export default { layout: 'dashboard' };
+export default {};
 </script>
 
 <style scoped>

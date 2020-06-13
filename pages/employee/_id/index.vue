@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Profile page</h1>
+    {{this.$route.params.id}}
   </div>
 </template>
 

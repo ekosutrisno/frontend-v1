@@ -68,16 +68,13 @@
           upload-behavior="delayed"
         />
       </div>
-      <!-- <pre
-        class="code"
-        v-text="formValues"
-      /> -->
     </FormulateForm>
   </div>
 </template>
 
 <script>
 export default {
+  layout: 'dashboard',
   data() {
     return {
       formValues: {}
