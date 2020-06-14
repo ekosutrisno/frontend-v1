@@ -1,15 +1,13 @@
 <template>
-  <div class="min-h-screen">
-    <div class="flex mx-auto overflow-hidden font-sans text">
-      <div class="hidden fixed nl-transition lg:block p-5 w-70 flex-none border-r-2 border-gray-300 dark:border-gray-800">
-        <LeftSidebar />
-      </div>
-      <div class="flex-1 mx-auto lg:ml-70 p-6 overflow-y-auto pt-10 pb-20 lg:pb-8 lg:pt-0">
-        <HeaderMainTop />
-        <nuxt />
-      </div>
-      <NavbarFooter />
+  <div class="flex mx-auto font-sans text">
+    <div class="hidden fixed nl-transition lg:block p-5 w-70 flex-none border-r-2 border-gray-300 dark:border-gray-800">
+      <LeftSidebar />
     </div>
+    <div class="flex-1 mx-auto lg:ml-70 p-6 pt-10 pb-20 lg:pb-0 lg:pt-0">
+      <HeaderMainTop />
+      <nuxt />
+    </div>
+    <NavbarFooter />
   </div>
 </template>
 
@@ -33,7 +31,6 @@ export default {
 .nl-transition {
   animation: 0.5s appear;
 }
-
 @keyframes appear {
   0% {
     opacity: 0;
@@ -41,5 +38,19 @@ export default {
   100% {
     opacity: 1;
   }
+}
+.scr::-webkit-scrollbar {
+  width: 12px;
+}
+
+.scr::-webkit-scrollbar-track {
+  background-color: #f8d57e;
+  border-radius: 10px;
+}
+
+.scr::-webkit-scrollbar-thumb {
+  background-color: #35495e;
+  border-radius: 10px;
+  width: 5px;
 }
 </style>

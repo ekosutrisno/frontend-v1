@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center justify-center min-h-screen">
+  <div class="flex items-center justify-center hidden">
     <FormulateForm
       class="login-form"
       name="login-form"
@@ -33,6 +33,7 @@
             label="Password"
             placeholder="Your password"
             validation="required"
+            autocomplete
           />
           <FormulateInput
             name="password_confirm"
@@ -41,6 +42,7 @@
             placeholder="Confirm password"
             validation="required|confirm"
             validation-name="Confirmation"
+            autocomplete
           />
         </div>
         <FormulateInput

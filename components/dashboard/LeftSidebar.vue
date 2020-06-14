@@ -2,7 +2,7 @@
   <div class="min-h-screen">
     <div class="flex justify-between items-center">
       <div class="flex items-center">
-        <div class="py-2 px-3 rounded-full bg-covid-green text-covid-gray focus:outline-none"><i class="fa fa-home"></i></div>
+        <div class="py-2 px-3 rounded-full bg-green-secondary text-covid-gray focus:outline-none"><i class="fa fa-home"></i></div>
         <div class="flex flex-col ml-2">
           <h1 class="text-covid-black text-lg font-semibold">Main Dashboar</h1>
           <h1 class="text-gray-500 -mt-1">Admin</h1>
@@ -11,7 +11,7 @@
       <NLink
         v-tooltip="{ content: 'Tambah informasi', classes: 'text-xs' }"
         to="/"
-        class="py-2 px-4 text-sm rounded bg-gray-200 dark:bg-xsis-light-base text-gray-500 hover:bg-covid-green hover:text-xsis-dark-base focus:outline-none"
+        class="py-2 px-4 text-sm rounded bg-gray-200 dark:bg-xsis-light-base text-gray-500 hover:bg-green-secondary hover:text-xsis-dark-base focus:outline-none"
       ><i class="fa fa-plus"></i></NLink>
     </div>
     <div class="mt-4 flex flex-col">
@@ -61,7 +61,7 @@
     </div>
     <div class="flex justify-between items-center mt-8">
       <div class="flex items-center">
-        <div class="py-2 px-3 text-center rounded-full bg-covid-green text-covid-gray focus:outline-none"><i class="fa fa-gear"></i></div>
+        <div class="py-2 px-3 text-center rounded-full bg-green-secondary text-covid-gray focus:outline-none"><i class="fa fa-gear"></i></div>
         <div class="flex flex-col ml-2">
           <h1 class="text-covid-green text-lg font-semibold">xsis apps</h1>
           <h1 class="text-gray-500 -mt-1">ver.2.0</h1>
@@ -70,7 +70,7 @@
       <button
         @click="showMode = !showMode"
         v-tooltip="{ content: 'Change color mode', classes: 'text-xs' }"
-        class="py-1 px-4 text-sm rounded bg-gray-200 dark:bg-xsis-light-base text-gray-500 hover:bg-covid-green hover:text-xsis-dark-base focus:outline-none"
+        class="py-1 px-4 text-sm rounded bg-gray-200 dark:bg-xsis-light-base text-gray-500 hover:bg-green-secondary hover:text-xsis-dark-base focus:outline-none"
       ><i class="fa fa-ellipsis-h"></i></button>
     </div>
     <div

@@ -1,8 +1,11 @@
 <template>
-  <div class="flex items-center justify-between py-2 border-b border-gray-400">
+  <div class="flex lg:w-fixed lg:fixed dark:shadow-lg items-center justify-between py-2 border-b border-gray-400 dark:border-gray-800">
     <div class="text-lg font-semibold"> <span class="mr-2 fa fa-fw fa-folder-open text-covid-green"></span>{{ '/' + this.$route.path.split('/', 2)[1]}}</div>
-    <div>
-      <Button class="inline-flex items-center space-x-1 focus:outline-none transition-opacity duration-200 ease-linear opacity-75 hover:opacity-100">
+    <div class="relative">
+      <Button
+        @click="openMenu = !openMenu"
+        class="inline-flex items-center space-x-1 focus:outline-none transition-opacity duration-200 ease-linear opacity-75 hover:opacity-100"
+      >
         <div class="text-lg font-semibold"> {{ this.$route.path.split('/', 2)[1]}}</div>
         <div class="rounded-full w-8 h-8 overflow-hidden">
           <img
@@ -15,11 +18,23 @@
       </Button>
     </div>
   </div>
+
 </template>
 
 <script>
-export default {};
+import MegaMenuProfile from '@/components/dashboard/MegaMenuProfile';
+export default {
+  components: { MegaMenuProfile },
+  data() {
+    return {
+      openMenu: false
+    };
+  }
+};
 </script>
 
 <style scoped>
+.mb-cs {
+  margin-bottom: -19rem;
+}
 </style>

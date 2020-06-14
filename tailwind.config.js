@@ -70,7 +70,10 @@ module.exports = {
          spacing: {
             '36': '9rem',
             '70': '18rem',
-            '72': '22rem'
+            '71': '19rem',
+            '72': '20rem',
+            fixed: '63.75rem',
+            main: '31rem'
          }
       }
    },
