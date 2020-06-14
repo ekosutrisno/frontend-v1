@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1>Undangan page</h1>
+  <div class="flex items-center justify-center">
+    <h1 class="font-semibold">Undangan page</h1>
   </div>
 </template>
 

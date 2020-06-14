@@ -1,10 +1,10 @@
 <template>
-  <div class="nv-transition w-full bottom-0 left-0 right-0 fixed bg-gray-dark border-t border-gray-600 lg:hidden">
+  <div class="nv-transition w-full bottom-0 left-0 right-0 fixed border-t bg-xsis-bg-light-primary dark:bg-xsis-bg-dark-primary border-gray-400 dark:border-xsis-bd-dark-primary lg:hidden z-10">
     <div class="mx-auto lg:mx-4 py-3 px-2  md:mx-6 md:py-5 flex justify-between">
       <div class="flex flex-col md:flex-row items-center justify-around">
         <nuxt-link
           to="/employee"
-          class="text-gray-font hover:text-green-light hover:no-underline transition-colors duration-300 ease-linear"
+          class="hover:text-green-light hover:no-underline transition-colors duration-300 ease-linear"
         >
           <div class="flex flex-col md:flex-row items-center">
             <div class="flex">
@@ -34,7 +34,7 @@
                 </g>
               </svg>
             </div>
-            <div class="flex md:pl-3 text-gray-font text-xs md:text-base font-semibold">
+            <div class="flex md:pl-3 text-xs md:text-base font-semibold">
               Employee
             </div>
           </div>
@@ -44,7 +44,7 @@
       <div class="flex flex-col md:flex-row items-center justify-between">
         <nuxt-link
           to="/invitation"
-          class="text-gray-font hover:text-green-light hover:no-underline transition-colors duration-300 ease-linear"
+          class="hover:text-green-light hover:no-underline transition-colors duration-300 ease-linear"
         >
           <div class="flex flex-col md:flex-row items-center">
             <div class="flex">
@@ -74,7 +74,7 @@
                 </g>
               </svg>
             </div>
-            <div class="flex md:pl-3 text-gray-font text-xs md:text-base font-semibold">
+            <div class="flex md:pl-3 text-xs md:text-base font-semibold">
               Invitations
             </div>
           </div>
@@ -85,7 +85,7 @@
       <div class="flex flex-col md:flex-row items-center justify-between">
         <nuxt-link
           to="/schedule"
-          class="text-gray-font hover:text-green-light hover:no-underline transition-colors duration-300 ease-linear"
+          class="hover:text-green-light hover:no-underline transition-colors duration-300 ease-linear"
         >
           <div class="flex flex-col md:flex-row items-center">
             <div class="flex">
@@ -115,7 +115,7 @@
                 </g>
               </svg>
             </div>
-            <div class="flex md:pl-3 text-gray-font text-xs md:text-base font-semibold">
+            <div class="flex md:pl-3 text-xs md:text-base font-semibold">
 
               Schedules
             </div>
@@ -127,7 +127,7 @@
       <div class="flex flex-col md:flex-row items-center justify-between">
         <nuxt-link
           to="/profile"
-          class="text-gray-font hover:text-green-light hover:no-underline transition-colors duration-300 ease-linear"
+          class="hover:text-green-light hover:no-underline transition-colors duration-300 ease-linear"
         >
           <div class="flex flex-col md:flex-row items-center">
             <div class="flex">
@@ -157,7 +157,7 @@
                 </g>
               </svg>
             </div>
-            <div class="flex md:pl-3 text-gray-font text-xs md:text-base font-semibold">
+            <div class="flex md:pl-3 text-xs md:text-base font-semibold">
               Profile
             </div>
           </div>
@@ -168,7 +168,7 @@
       <div class="flex flex-col md:flex-row items-center justify-between">
         <nuxt-link
           to="/profile"
-          class="text-gray-font hover:text-green-light hover:no-underline transition-colors duration-300 ease-linear"
+          class="hover:text-green-light hover:no-underline transition-colors duration-300 ease-linear"
         >
           <div class="flex flex-col md:flex-row items-center">
             <div class="flex">
@@ -198,7 +198,7 @@
                 </g>
               </svg>
             </div>
-            <div class="flex md:pl-3 text-gray-font text-xs md:text-base font-semibold">
+            <div class="flex md:pl-3 text-xs md:text-base font-semibold">
               Resources
             </div>
           </div>
@@ -209,7 +209,7 @@
       <div class="flex flex-col md:flex-row items-center justify-between">
         <nuxt-link
           to="/"
-          class="text-gray-font hover:text-green-light hover:no-underline transition-colors duration-300 ease-linear"
+          class="hover:text-green-light hover:no-underline transition-colors duration-300 ease-linear"
         >
           <div class="flex flex-col md:flex-row items-center">
             <div class="flex">
@@ -231,7 +231,7 @@
                 ></path>
               </svg>
             </div>
-            <div class="flex md:pl-3 text-gray-font text-xs md:text-base font-semibold">
+            <div class="flex md:pl-3 text-xs md:text-base font-semibold">
               Home
             </div>
           </div>

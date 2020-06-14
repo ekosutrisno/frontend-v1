@@ -60,6 +60,7 @@ export default {
             text: 'Go to employee',
             onClick: (e, toastObject) => {
               this.$router.push('/employee');
+              toastObject.goAway(0);
             }
           }
         ],
