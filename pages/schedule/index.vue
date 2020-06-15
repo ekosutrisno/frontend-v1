@@ -1,76 +1,85 @@
 <template>
-  <div class="flex items-center justify-center hidden">
-    <FormulateForm
-      class="login-form"
-      name="login-form"
-      v-model="formValues"
-      @submit="send"
-    >
-      <div>
-        <h2 class="form-title">Register</h2>
-        <p>
-          You can place any elements you want inside a form. The inputs themselves
-          can even be deeply nested.
-        </p>
-        <FormulateInput
-          name="name"
-          type="text"
-          label="Your name"
-          placeholder="Your name"
-          validation="required"
-        />
-        <FormulateInput
-          name="email"
-          type="email"
-          label="Email address"
-          placeholder="Email address"
-          validation="required|email"
-        />
-        <div class="double-wide">
+  <div class="mx-auto lg:mt-16 lg:overflow-y-auto lg:h-main scr-custom lg:pr-2 mt-2">
+    <div class="flex items-center justify-center">
+      <FormulateForm
+        class="login-form"
+        name="login-form"
+        v-model="formValues"
+        @submit="send"
+      >
+        <div>
+          <h2 class="form-title">Register</h2>
+          <p>
+            You can place any elements you want inside a form. The inputs themselves
+            can even be deeply nested.
+          </p>
           <FormulateInput
-            name="password"
-            type="password"
-            label="Password"
-            placeholder="Your password"
+            name="name"
+            type="text"
+            label="Your name"
+            placeholder="Your name"
             validation="required"
-            autocomplete
           />
           <FormulateInput
-            name="password_confirm"
-            type="password"
-            label="Confirm your password"
-            placeholder="Confirm password"
-            validation="required|confirm"
-            validation-name="Confirmation"
-            autocomplete
+            name="name"
+            type="search"
+            label="Your name"
+            placeholder="Your name"
+            validation="required"
+          />
+          <FormulateInput
+            name="email"
+            type="email"
+            label="Email address"
+            placeholder="Email address"
+            validation="required|email"
+          />
+          <div class="double-wide">
+            <FormulateInput
+              name="password"
+              type="password"
+              label="Password"
+              placeholder="Your password"
+              validation="required"
+              autocomplete
+            />
+            <FormulateInput
+              name="password_confirm"
+              type="password"
+              label="Confirm your password"
+              placeholder="Confirm password"
+              validation="required|confirm"
+              validation-name="Confirmation"
+              autocomplete
+            />
+          </div>
+          <FormulateInput
+            type="submit"
+            label="Register"
+          />
+          <FormulateInput
+            type="button"
+            label="Reset"
+            data-ghost
+            @click="reset"
+          />
+          <FormulateInput
+            type="image"
+            name="avatar"
+            upload-url="/your/upload/directory"
+            label="Your avatar"
+            upload-behavior="delayed"
+          />
+          <FormulateInput
+            type="file"
+            name="fileAtachment"
+            upload-url="/your/upload/directory"
+            label="Your Resume"
+            upload-behavior="delayed"
           />
         </div>
-        <FormulateInput
-          type="submit"
-          label="Register"
-        />
-        <FormulateInput
-          type="button"
-          label="Reset"
-          data-ghost
-          @click="reset"
-        />
-        <FormulateInput
-          type="image"
-          name="avatar"
-          upload-url="/your/upload/directory"
-          label="Your avatar"
-          upload-behavior="delayed"
-        />
-        <FormulateInput
-          type="file"
-          name="fileAtachment"
-          upload-url="/your/upload/directory"
-          label="Your Resume"
-          upload-behavior="delayed"
-        />
-      </div>
-    </FormulateForm>
+      </FormulateForm>
+    </div>
   </div>
 </template>
 

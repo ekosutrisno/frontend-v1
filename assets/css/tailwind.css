@@ -11,9 +11,7 @@
    @apply py-2;
    @apply px-4;
    @apply text-left;
-   @apply w-full;
    @apply text-covid-black;
-   @apply rounded-md;
    @apply font-bold;
    @apply transition-colors;
    @apply duration-150;
@@ -26,6 +24,34 @@
 .btn:hover {
    @apply bg-green-secondary;
    @apply text-gray-font;
+}
+
+.btn-util {
+   @apply py-2;
+   @apply px-4;
+   @apply font-medium;
+   @apply text-gray-font;
+   @apply bg-green-secondary;
+}
+.btn-util:hover {
+   @apply bg-green-light;
+}
+.btn-util:focus {
+   @apply outline-none;
+}
+.btn-util-sm {
+   @apply py-1;
+   @apply px-3;
+   @apply font-medium;
+   @apply text-sm;
+   @apply text-gray-font;
+   @apply bg-green-secondary;
+}
+.btn-util-sm:hover {
+   @apply bg-green-light;
+}
+.btn-util-sm:focus {
+   @apply outline-none;
 }
 
 /*Start Custom */

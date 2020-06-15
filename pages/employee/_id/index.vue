@@ -1,14 +1,12 @@
 <template>
-  <div>
-    <a
-      href="javascript:history.back()"
-      class="text-lg font-semibold"
-    ><i class="fa fa-fw fa-arrow-left"></i> Back</a>
+  <div class="mx-auto lg:mt-16">
+    <BackArrow />
   </div>
 </template>
 
 <script>
-export default { layout: 'dashboard' };
+import BackArrow from '@/components/dashboard/BackArrow';
+export default { layout: 'dashboard', components: { BackArrow } };
 </script>
 
 <style scoped>

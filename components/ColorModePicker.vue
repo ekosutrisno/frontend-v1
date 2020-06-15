@@ -4,6 +4,7 @@
       <li
         @click="$colorMode.preference = 'system'"
         :class="getClasses('system')"
+        class="cursor-pointer p-1 rounded border-2 border-transparent hover:border-green-secondary"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -46,6 +47,7 @@
       <li
         @click="$colorMode.preference = 'light'"
         :class="getClasses('light')"
+        class="cursor-pointer p-1 rounded border-2 border-transparent hover:border-green-secondary"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -128,6 +130,7 @@
       <li
         @click="$colorMode.preference = 'dark'"
         :class="getClasses('dark')"
+        class="cursor-pointer p-1 rounded border-2 border-transparent hover:border-green-secondary"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -152,6 +155,7 @@
       <li
         @click="$colorMode.preference = 'sepia'"
         :class="getClasses('sepia')"
+        class="cursor-pointer p-1 rounded border-2 border-transparent hover:border-green-secondary"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
