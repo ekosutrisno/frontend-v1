@@ -18,52 +18,52 @@
       <NLink
         to="/home"
         class="btn rounded w-full dark:text-xsis-dark-base"
-      > <i class="fa fa-fw fa-user-md"></i> <span class="ml-3">Home</span></NLink>
+      > <i class="fa fa-fw fa-home"></i> <span class="ml-3">Home</span></NLink>
       <NLink
         to="/employee"
         class="btn rounded w-full dark:text-xsis-dark-base"
-      > <i class="fa fa-fw fa-hands-wash"></i> <span class="ml-3">Employees</span></NLink>
+      > <i class="fa fa-fw fa-user-astronaut"></i> <span class="ml-3">Employees</span></NLink>
       <NLink
         to="/invitation"
         class="btn rounded w-full dark:text-xsis-dark-base"
-      > <i class="fa fa-fw fa-temperature-high"></i> <span class="ml-3">Invotations</span></NLink>
+      > <i class="fa fa-fw fa-envelope-open-text"></i> <span class="ml-3">Invitations</span></NLink>
       <NLink
         to="/schedule"
         class="btn rounded w-full dark:text-xsis-dark-base"
-      > <i class="fa fa-fw fa-shield-virus"></i> <span class="ml-3">Schedules</span></NLink>
+      > <i class="fa fa-fw fa-clipboard-list"></i> <span class="ml-3">Schedules</span></NLink>
       <NLink
         to="/profile"
         class="btn rounded w-full dark:text-xsis-dark-base"
-      > <i class="fa fa-fw fa-handshake-slash"></i> <span class="ml-3">Profile</span></NLink>
+      > <i class="far fa-fw fa-user-circle"></i> <span class="ml-3">Profile</span></NLink>
     </div>
     <div class="mt-4 flex flex-col">
-      <h1 class="text-base text-gray-500 mb-2">Infomration</h1>
+      <h1 class="text-base text-gray-500 mb-2">Company Info</h1>
       <NLink
-        to="/employee"
+        to="/account"
         class="btn rounded w-full dark:text-xsis-dark-base"
-      > <i class="fa fa-fw fa-hospital-user"></i> <span class="ml-3">Rumah Sakit</span></NLink>
+      > <i class="fa fa-fw fa-hand-holding-usd"></i> <span class="ml-3">Accountant</span></NLink>
       <NLink
-        to="/login"
+        to="/marketing"
         class="btn rounded w-full dark:text-xsis-dark-base"
-      > <i class="fa fa-fw fa-people-arrows"></i> <span class="ml-3">Sosial Distancing</span></NLink>
+      > <i class="fa fa-fw fa-store"></i> <span class="ml-3">Marketing</span></NLink>
       <NLink
-        to="/employee"
+        to="/administration"
         class="btn rounded w-full dark:text-xsis-dark-base"
-      > <i class="fa fa-fw fa-ambulance"></i> <span class="ml-3">Urgent</span></NLink>
+      > <i class="fa fa-fw fa-people-carry"></i> <span class="ml-3">Administrations</span></NLink>
       <NLink
-        to="/design02b"
+        to="/approval"
         class="btn rounded w-full dark:text-xsis-dark-base"
-      > <i class="fa fa-fw fa-stethoscope"></i> <span class="ml-3">Check</span></NLink>
+      > <i class="fa fa-fw fa-calendar-check"></i> <span class="ml-3">Approval</span></NLink>
       <NLink
-        to="/employee"
+        to="/staf"
         class="btn rounded w-full dark:text-xsis-dark-base"
-      > <i class="fa fa-fw fa-microscope"></i> <span class="ml-3">Penelitian</span></NLink>
+      > <i class="fa fa-fw fa-user-tag"></i> <span class="ml-3">Staf and Trainer</span></NLink>
     </div>
     <div class="flex justify-between items-center mt-8">
       <div class="flex items-center">
         <div class="py-2 px-3 text-center rounded-full bg-green-secondary text-covid-gray focus:outline-none"><i class="fa fa-gear"></i></div>
         <div class="flex flex-col ml-2">
-          <h1 class="text-covid-green text-lg font-semibold">xsis apps</h1>
+          <h1 class="text-covid-green text-lg font-semibold">eksho app</h1>
           <h1 class="text-gray-500 -mt-1">ver.2.0</h1>
         </div>
       </div>

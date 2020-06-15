@@ -1,6 +1,6 @@
 <template>
   <div class="flex lg:w-fixed lg:fixed dark:shadow-lg items-center justify-between py-2 border-b border-gray-400 dark:border-gray-800">
-    <div class="text-lg font-semibold"> <span class="mr-2 fa fa-fw fa-folder-open text-covid-green"></span>{{ '/' + this.$route.path.split('/', 2)[1]}}</div>
+    <div class="text-lg font-semibold"> <span class="mr-2 far fa-fw fa-folder-open text-covid-green"></span>{{ '/' + this.$route.path.split('/', 2)[1]}}</div>
     <div class="relative">
       <Button
         @click="openMenu = !openMenu"

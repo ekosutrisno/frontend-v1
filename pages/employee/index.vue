@@ -23,6 +23,15 @@
           ><i class="fa fa-plus"></i>
           </nuxt-link>
         </div>
+
+        <div class="mr-4">
+          <div class="mb-2 font-medium">Info page</div>
+          <div class="flex flex-col items-start justify-between">
+            <span class="text-xs">Page: <span class="font-semibold">1</span></span>
+            <span class="text-xs">Total data: <span class="font-semibold">1890</span></span>
+          </div>
+        </div>
+
         <div class="mr-4 w-24">
           <FormulateInput
             type="number"

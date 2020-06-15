@@ -1,7 +1,7 @@
 <template>
   <a
     href="javascript:history.back()"
-    class="text-base font-semibold"
+    class="text-base font-semibold hover:text-green-secondary"
   ><i class="fa fa-fw fa-arrow-left"></i>Back</a>
 </template>
 <script>

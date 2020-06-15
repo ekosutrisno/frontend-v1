@@ -63,20 +63,6 @@
             data-ghost
             @click="reset"
           />
-          <FormulateInput
-            type="image"
-            name="avatar"
-            upload-url="/your/upload/directory"
-            label="Your avatar"
-            upload-behavior="delayed"
-          />
-          <FormulateInput
-            type="file"
-            name="fileAtachment"
-            upload-url="/your/upload/directory"
-            label="Your Resume"
-            upload-behavior="delayed"
-          />
         </div>
       </FormulateForm>
     </div>
@@ -114,6 +100,7 @@ export default {
 .form-title {
   margin-top: 0;
 }
+
 .login-form::v-deep .formulate-input .formulate-input-element {
   max-width: none;
 }
