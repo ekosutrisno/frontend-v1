@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto lg:mt-16 lg:overflow-y-auto lg:h-main scr-custom lg:pr-2 mt-2">
+  <div class="mx-auto mt-2">
     <div class="flex items-center justify-center">
       <FormulateForm
         class="login-form"
@@ -16,13 +16,6 @@
           <FormulateInput
             name="name"
             type="text"
-            label="Your name"
-            placeholder="Your name"
-            validation="required"
-          />
-          <FormulateInput
-            name="name"
-            type="search"
             label="Your name"
             placeholder="Your name"
             validation="required"

@@ -9,11 +9,12 @@
         @submit="sendingData"
       >
         <div class="mb-3 pb-2 border-b border-gray-400 dark:border-gray-800">
-          <i class="fa fa-fw fa-exclamation-triangle"></i> Mohon Lengkapi form berikut dengan data yang benar dan dapat dipertanggung jawabkan. Tanda (*) wajib diisi.
+          <span class="block"><i class="fa fa-fw fa-exclamation-triangle"></i> Mohon Lengkapi <span class="px-1 text-xs border border-green-secondary font-semibold rounded">form add employee</span> berikut dengan data yang benar dan dapat dipertanggung jawabkan. Tanda <span class="text-red-400 font-semibold">(*)</span> wajib diisi.</span>
         </div>
         <div class="mb-3 w-56 pb-2 font-semibold border-b border-gray-400 dark:border-gray-800">
           <i class="fa fa-fw fa-dot-circle fa-xs"></i> Profile Biodata
         </div>
+
         <div class="double-wide space-x-4">
           <FormulateInput
             name="fullName"
@@ -111,10 +112,10 @@
         </div>
         <div class="double-wide space-x-4">
           <FormulateInput
-            name="hoby"
+            name="hobby"
             type="text"
-            label="Hoby"
-            placeholder="Your Hobi"
+            label="Hobby"
+            placeholder="Your Hobbi"
           />
           <FormulateInput
             name="ethnic"
@@ -145,31 +146,35 @@
         <div class="double-wide space-x-4">
           <FormulateInput
             name="identityNo"
-            type="text"
+            type="number"
+            min="0"
             label="Number of Identity *"
             placeholder="1609152005960001"
-            validation="required"
+            validation="required|number"
           />
           <FormulateInput
             name="phoneNumber1"
-            type="text"
+            type="number"
+            min="0"
             label="Phone Number 1 *"
             placeholder="Your phonenumber"
-            validation="required"
+            validation="required|number"
           />
           <FormulateInput
             name="phoneNumber2"
-            type="text"
+            type="number"
             label="Phone Number 2"
+            min="0"
             placeholder="Your phonenumber2"
-            validation="required"
+            validation="number"
           />
           <FormulateInput
             name="parentPhoneNumber"
-            type="text"
+            type="number"
             label="Parent Phone Number *"
+            min="0"
             placeholder="Your Parent number"
-            validation="required"
+            validation="number"
           />
         </div>
         <div class="double-wide space-x-4">
@@ -308,12 +313,47 @@
 
 <script>
 import BackArrow from '@/components/dashboard/BackArrow';
+const data = {
+  fullName: 'Puspita Sari',
+  nickName: 'Sari',
+  pob: 'Simpang Tiga',
+  dob: '2020-09-12',
+  gender: 1,
+  hight: 167,
+  weight: 53,
+  nationality: 'Indonesia',
+  ethnic: 'Jawa',
+  hobby: 'Membaca',
+  email: 'ekosutrisno801@gmail.com',
+  identityNo: '1609152005960001',
+  phoneNumber1: '082381928902',
+  phoneNumber2: '089807765645',
+  parentPhoneNumber: '082381928933',
+  childSequence: '1',
+  howManyBrothers: '4',
+  companyId: 1,
+  address1: 'Lampung',
+  address2: 'Bandung',
+  postalCode1: '32173',
+  postalCode2: '32174',
+  rt1: '4',
+  rt2: '2',
+  rw1: '11',
+  rw2: '5',
+  kelurahan1: 'Simpang Luas',
+  kelurahan2: 'Karet Kuningan',
+  region1: 'Palembang Utara',
+  region2: 'Jakarta Selatan',
+  maritalStatus: 1,
+  identityType: 2,
+  religion: 2
+};
 export default {
   layout: 'dashboard',
   components: { BackArrow },
   data() {
     return {
-      dataEmployee: {}
+      dataEmployee: data
     };
   },
   methods: {

@@ -91,6 +91,9 @@ export default {
       pages: 10
     };
   },
+  async fetch({ store }) {
+    await store.dispatch('employee/loadAllEmployee');
+  },
   methods: {
     onClikBtn(pram) {
       alert(`${pram}`);

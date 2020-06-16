@@ -6,7 +6,10 @@
 
 <script>
 import BackArrow from '@/components/dashboard/BackArrow';
-export default { layout: 'dashboard', components: { BackArrow } };
+export default {
+  layout: 'dashboard',
+  components: { BackArrow }
+};
 </script>
 
 <style scoped>
