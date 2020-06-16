@@ -73,7 +73,9 @@ module.exports = {
             '71': '19rem',
             '72': '20rem',
             fixed: '63.75rem',
-            main: '31rem'
+            main: '31rem',
+            'custom-one': 'calc(100vh - (9.75rem))',
+            'custom-two': 'calc(100vh - (3.2rem))'
          }
       }
    },
@@ -108,6 +110,16 @@ module.exports = {
          'group-hover'
       ],
       textColor: [
+         'dark',
+         'dark-hover',
+         'dark-active',
+         'hover',
+         'responsive',
+         'focus',
+         'group-focus',
+         'group-hover'
+      ],
+      opacity: [
          'dark',
          'dark-hover',
          'dark-active',

@@ -1,6 +1,6 @@
 <template>
-  <div class="mx-auto mt-5 lg:mt-16">
-    <div class="flex dark:shadow-lg lg:w-fixed lg:fixed p-3 items-center justify-between rounded-lg border border-gray-400 dark:border-gray-800">
+  <div class="mx-auto mt-5 overflow-y-auto">
+    <div class="flex dark:shadow-lg w-full p-3 items-center justify-between rounded-lg border border-gray-400 dark:border-gray-800">
       <div>
         <FormulateInput
           name="employee"
@@ -18,7 +18,7 @@
         >
           <nuxt-link
             v-tooltip="{ content: 'Tambah data employee', classes: 'text-xs' }"
-            :to="this.$route.path+'/insert'"
+            :to="{name:'employee-insert'}"
             class="py-2 px-4 rounded w-full sm:w-auto rounded-sm focus:outline-none font-medium text-gray-font bg-green-secondary hover:bg-green-light"
           ><i class="fa fa-plus"></i>
           </nuxt-link>
@@ -27,8 +27,8 @@
         <div class="mr-4">
           <div class="mb-2 font-medium">Info page</div>
           <div class="flex flex-col items-start justify-between">
-            <span class="text-xs">Page: <span class="font-semibold">1</span></span>
-            <span class="text-xs">Total data: <span class="font-semibold">1890</span></span>
+            <span class="text-xs">Page: <span class="font-semibold">{{1}}</span></span>
+            <span class="text-xs">Total data: <span class="font-semibold">{{pages}}</span></span>
           </div>
         </div>
 
@@ -40,6 +40,7 @@
             label="Row of View"
             value="10"
             max="100"
+            v-model.number="pages"
             placeholder="20 Rows"
           />
         </div>
@@ -62,16 +63,18 @@
         </div>
       </div>
     </div>
-    <div class="lg:pt-24">
-      <div class="lg:overflow-y-auto lg:h-main scr-custom lg:pr-2 mt-2">
+    <div class="pt-3">
+      <div
+        class="scr-custom-sm lg:pr-2 mt-2 overflow-y-auto"
+        style="height:30rem"
+      >
         <CardEmployee
-          v-for="i in 10"
+          v-for="i in pages"
           :key="i"
           :employee="{id:i}"
         />
       </div>
     </div>
-
   </div>
 </template>
 
@@ -84,7 +87,8 @@ export default {
   },
   data() {
     return {
-      employee: ''
+      employee: '',
+      pages: 10
     };
   },
   methods: {

@@ -3,9 +3,11 @@
     <div class="hidden fixed nl-transition lg:block p-5 w-70 flex-none border-r-2 border-gray-300 dark:border-gray-800">
       <LeftSidebar />
     </div>
-    <div class="flex-1 mx-auto lg:ml-70 p-6 pt-10 pb-20 lg:pb-0 lg:pt-0">
+    <div class="flex-1 w-screen mx-auto lg:ml-70 p-6 pb-20 lg:pb-0 lg:pt-0">
       <HeaderMainTop />
-      <nuxt />
+      <div class="pr-2 lg:pr-0 lg:h-custom-two h-custom-one overflow-y-auto scr-custom-sm">
+        <nuxt />
+      </div>
     </div>
     <NavbarFooter />
   </div>

@@ -4,7 +4,7 @@
       <div class="flex items-center">
         <div class="py-2 px-3 rounded-full bg-green-secondary text-covid-gray focus:outline-none"><i class="fa fa-home"></i></div>
         <div class="flex flex-col ml-2">
-          <h1 class="text-covid-black text-lg font-semibold">Main Dashboar</h1>
+          <h1 class="text-lg font-semibold">Main Dashboar</h1>
           <h1 class="text-gray-500 -mt-1">Admin</h1>
         </div>
       </div>
