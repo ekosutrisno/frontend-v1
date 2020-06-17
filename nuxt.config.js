@@ -5,7 +5,8 @@ export default {
     */
    head: {
       title: process.env.npm_package_name || '',
-      meta: [{
+      meta: [
+         {
             charset: 'utf-8'
          },
          {
@@ -18,17 +19,23 @@ export default {
             content: process.env.npm_package_description || ''
          }
       ],
-      link: [{
-         rel: 'icon',
-         type: 'image/x-icon',
-         href: '/favicon.ico'
-      }, {
-         rel: 'stylesheet',
-         href: 'https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;515;600;700&display=swap'
-      }],
-      script: [{
-         src: 'https://kit.fontawesome.com/c4c4a7fc05.js'
-      }]
+      link: [
+         {
+            rel: 'icon',
+            type: 'image/x-icon',
+            href: '/favicon.ico'
+         },
+         {
+            rel: 'stylesheet',
+            href:
+               'https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;515;600;700&display=swap'
+         }
+      ],
+      script: [
+         {
+            src: 'https://kit.fontawesome.com/c4c4a7fc05.js'
+         }
+      ]
    },
    /*
     ** Customize the progress-bar color
@@ -43,10 +50,12 @@ export default {
    /*
     ** Plugins to load before mounting the App
     */
-   plugins: [{
+   plugins: [
+      {
          src: '~/plugins/vue-glide-js.js',
          ssr: false
-      }, {
+      },
+      {
          src: '~/plugins/v-tooltip.js',
          ssr: false
       },
@@ -57,7 +66,7 @@ export default {
       {
          src: '~/plugins/vue-toasted.js',
          ssr: false
-      },
+      }
    ],
    /*
     ** Nuxt.js dev-modules
@@ -74,13 +83,15 @@ export default {
    modules: [
       // Doc: https://axios.nuxtjs.org/usage
       '@nuxtjs/axios',
-      '@nuxtjs/pwa',
+      '@nuxtjs/pwa'
    ],
    /*
     ** Axios module configuration
     ** See https://axios.nuxtjs.org/options
     */
-   axios: {},
+   axios: {
+      baseURL: `http://localhost:8088/xsisapp/api/v1`
+   },
    /*
     ** Build configuration
     */
@@ -90,4 +101,4 @@ export default {
        */
       extend(config, ctx) {}
    }
-}
+};

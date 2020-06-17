@@ -13,17 +13,11 @@
       </div>
       <div class="links">
         <nuxt-link
-          to="/"
+          to="/home"
           class="button--green"
+          v-tooltip="{ content: 'Go to dashboard', classes: 'text-sm' }"
         >
-          Home
-        </nuxt-link>
-        <nuxt-link
-          to="/employee"
-          class="button--green"
-          v-tooltip="{ content: 'Go to employee page', classes: 'text-sm' }"
-        >
-          Employee <i class="fa fa-fw fa-user-graduate"></i>
+          Dashboard <i class="fa fa-fw fa-user-graduate"></i>
         </nuxt-link>
         <button
           @click="showToas"
@@ -46,6 +40,7 @@ export default {
     Logo,
     ColorModePicker
   },
+  middleware: 'loadAllDataEmployee',
   methods: {
     showToas() {
       this.$toasted.show('Terjadi kesalahan pada saat Cek', {

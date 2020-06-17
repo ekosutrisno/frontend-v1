@@ -5,19 +5,19 @@
       <div class="flex flex-col lg:flex-row lg:items-center lg:space-x-5">
         <div>
           <label class="text-sm">Full Name:</label>
-          <h1 class="nama font-medium text-lg">Eko Sutrisno</h1>
+          <h1 class="nama font-medium text-lg">{{employee.fullName}}</h1>
         </div>
         <div>
           <label class="text-sm">Email:</label>
-          <h1 class="nama font-medium text-lg">ekosutrisno801@gmail.com</h1>
+          <h1 class="nama font-medium text-lg">{{employee.email}}</h1>
         </div>
         <div>
           <label class="text-sm">Phone Number:</label>
-          <h1 class="nama font-medium text-lg">082381928902</h1>
+          <h1 class="nama font-medium text-lg">{{employee.phoneNumber1}}</h1>
         </div>
         <div>
           <label class="text-sm">Natioanlity:</label>
-          <h1 class="nama font-medium text-lg">Indonesia</h1>
+          <h1 class="nama font-medium text-lg">{{employee.nationality}}</h1>
         </div>
       </div>
       <div class="inline-flex items-center space-x-3">
@@ -41,7 +41,7 @@
       ><i class="fa fa-fw fa-mouse"></i>Click here for detail</nuxt-link>
       <div class="flex space-x-2 items-center justify-between">
         <label class="text-sm hidden sm:block">Status:</label>
-        <span :class="{'text-green-secondary':employee.id%2==0}"><i class="far fa-check-circle"></i></span>
+        <span :class="{'text-green-secondary':employee.isComplete}"><i class="far fa-check-circle"></i></span>
         <span class="text-green-secondary"> <i class="fa fa-paperclip"></i></span>
       </div>
 

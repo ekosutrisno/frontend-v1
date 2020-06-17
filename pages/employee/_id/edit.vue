@@ -3,7 +3,7 @@
     <BackArrow />
     <div class="w-full h-custom-insert-employee p-5 lg:overflow-y-auto scr-custom lg:pr-2">
       <FormulateForm
-        class="employee-form"
+        class="employee-form nl-transition"
         name="employee-form"
         v-model="dataEmployee"
         @submit="sendingData"
@@ -295,68 +295,44 @@
             label="Kirim data"
           />
           <FormulateInput
+            v-if="!btnResetVisible"
             type="button"
             label="Reset data"
             data-ghost
             @click="reset"
           />
+          <FormulateInput
+            v-if="btnResetVisible"
+            type="button"
+            label="Cancel Reset data"
+            data-ghost
+            @click="cancelReset"
+          />
         </div>
       </FormulateForm>
-      <div>
-        {{dataEmployee}}
-      </div>
     </div>
 
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import BackArrow from '@/components/dashboard/BackArrow';
-const data = {
-  fullName: 'Puspita Sari',
-  nickName: 'Sari',
-  pob: 'Simpang Tiga',
-  dob: '2020-09-12',
-  gender: 1,
-  hight: 167,
-  weight: 53,
-  nationality: 'Indonesia',
-  ethnic: 'Jawa',
-  hobby: 'Membaca',
-  email: 'ekosutrisno801@gmail.com',
-  identityNo: '1609152005960001',
-  phoneNumber1: '082381928902',
-  phoneNumber2: '089807765645',
-  parentPhoneNumber: '082381928933',
-  childSequence: '1',
-  howManyBrothers: '4',
-  companyId: 1,
-  address1: 'Lampung',
-  address2: 'Bandung',
-  postalCode1: '32173',
-  postalCode2: '32174',
-  rt1: '4',
-  rt2: '2',
-  rw1: '11',
-  rw2: '5',
-  kelurahan1: 'Simpang Luas',
-  kelurahan2: 'Karet Kuningan',
-  region1: 'Palembang Utara',
-  region2: 'Jakarta Selatan',
-  maritalStatus: 1,
-  identityType: 2,
-  religion: 2
-};
 export default {
   layout: 'dashboard',
   components: { BackArrow },
   data() {
     return {
-      dataEmployee: data
+      dataEmployee: {},
+      btnResetVisible: false
     };
   },
-  created() {
-    this.$store.dispatch('employee/loadSingleEmployee', this.$route.params.id);
+  async fetch() {
+    await this.$store.dispatch(
+      'employee/loadSingleEditEmployee',
+      this.$route.params.id
+    );
+    this.dataEmployee = this.$store.state.employee.employeeSingleEdit;
   },
   methods: {
     sendingData() {
@@ -364,6 +340,11 @@ export default {
     },
     reset() {
       this.$formulate.reset('employee-form');
+      this.btnResetVisible = true;
+    },
+    cancelReset() {
+      this.dataEmployee = this.$store.state.employee.employeeSingleEdit;
+      this.btnResetVisible = false;
     }
   }
 };
@@ -380,21 +361,6 @@ export default {
   .double-wide .formulate-input {
     flex-grow: 1;
     width: calc(50%);
-  }
-}
-@media (min-width: 420px) {
-  .four-wide {
-    display: flex;
-  }
-  .four-wide .formulate-input {
-    flex-grow: 1;
-    width: calc(25% - 0.5em);
-  }
-  .four-wide .formulate-input:first-child {
-    margin-right: 0.5em;
-  }
-  .four-wide .formulate-input:last-child {
-    margin-left: 0.5em;
   }
 }
 @media only screen and (min-width: 992px) {

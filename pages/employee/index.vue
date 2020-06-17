@@ -27,8 +27,8 @@
         <div class="mr-4">
           <div class="mb-2 font-medium">Info page</div>
           <div class="flex flex-col items-start justify-between">
-            <span class="text-xs">Page: <span class="font-semibold">{{1}}</span></span>
-            <span class="text-xs">Total data: <span class="font-semibold">{{pages}}</span></span>
+            <span class="text-xs">Page: <span class="font-semibold">{{employees.number + 1}}</span></span>
+            <span class="text-xs">Total data: <span class="font-semibold">{{employees.totalElements}}</span></span>
           </div>
         </div>
 
@@ -65,13 +65,13 @@
     </div>
     <div class="pt-3">
       <div
-        class="scr-custom-sm lg:pr-2 mt-2 overflow-y-auto"
+        class="scr-custom-sm nl-transition lg:pr-2 mt-2 overflow-y-auto"
         style="height:30rem"
       >
         <CardEmployee
-          v-for="i in pages"
-          :key="i"
-          :employee="{id:i}"
+          v-for="employee in employees.content"
+          :key="employee.id"
+          :employee="employee"
         />
       </div>
     </div>
@@ -79,6 +79,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import CardEmployee from '@/components/employee/CardEmployee';
 export default {
   layout: 'dashboard',
@@ -91,8 +92,10 @@ export default {
       pages: 10
     };
   },
-  async fetch({ store }) {
-    await store.dispatch('employee/loadAllEmployee');
+  computed: {
+    ...mapState({
+      employees: state => state.employee.employees
+    })
   },
   methods: {
     onClikBtn(pram) {

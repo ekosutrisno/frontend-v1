@@ -8,7 +8,10 @@
 import BackArrow from '@/components/dashboard/BackArrow';
 export default {
   layout: 'dashboard',
-  components: { BackArrow }
+  components: { BackArrow },
+  created() {
+    this.$store.dispatch('employee/loadSingleEmployee', this.$route.params.id);
+  }
 };
 </script>
 
