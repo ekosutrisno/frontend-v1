@@ -60,16 +60,8 @@ export default {
   },
   name: 'CardEmployee',
   methods: {
-    getDetailEmployee(id) {
-      // alert(`Get Detail Employee ${id}`);
-      // alert(`${this.$route.path}/${id}`);
-      return this.$route.push(`${this.$route.path}/${id}`);
-    },
-    editEmployee(id) {
-      alert(`Edit Employee ${id}`);
-    },
     deleteEmployee(id) {
-      alert(`Delete Employee ${id}`);
+      this.$store.dispatch('employee/deleteDataEmployee', id);
     }
   }
 };

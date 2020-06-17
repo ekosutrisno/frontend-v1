@@ -40,7 +40,7 @@ export default {
     Logo,
     ColorModePicker
   },
-  middleware: 'loadAllDataEmployee',
+
   methods: {
     showToas() {
       this.$toasted.show('Terjadi kesalahan pada saat Cek', {

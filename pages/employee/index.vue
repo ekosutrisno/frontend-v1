@@ -41,6 +41,7 @@
             value="10"
             max="100"
             v-model.number="pages"
+            @keyup="getNewDataPaging"
             placeholder="20 Rows"
           />
         </div>
@@ -100,6 +101,9 @@ export default {
   methods: {
     onClikBtn(pram) {
       alert(`${pram}`);
+    },
+    getNewDataPaging() {
+      alert('New Paging');
     }
   }
 };

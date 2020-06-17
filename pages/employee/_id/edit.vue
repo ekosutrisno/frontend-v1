@@ -1,6 +1,12 @@
 <template>
   <div class="mx-auto mt-4">
     <BackArrow />
+    <div
+      v-if="isLoading"
+      class="absolute flex items-center justify-center inset-0 w-full h-full bg-black dark:bg-gray-100 loading-custom"
+    >
+      <LoadingCustom />
+    </div>
     <div class="w-full h-custom-insert-employee p-5 lg:overflow-y-auto scr-custom lg:pr-2">
       <FormulateForm
         class="employee-form nl-transition"
@@ -318,13 +324,15 @@
 <script>
 import { mapState } from 'vuex';
 import BackArrow from '@/components/dashboard/BackArrow';
+import LoadingCustom from '@/components/LoadingCustom';
 export default {
   layout: 'dashboard',
-  components: { BackArrow },
+  components: { BackArrow, LoadingCustom },
   data() {
     return {
       dataEmployee: {},
-      btnResetVisible: false
+      btnResetVisible: false,
+      isLoading: false
     };
   },
   async fetch() {
@@ -336,7 +344,20 @@ export default {
   },
   methods: {
     sendingData() {
-      console.log(this.dataEmployee);
+      const data = {
+        id: this.$route.params.id,
+        employee: this.dataEmployee
+      };
+      this.$store.dispatch('employee/updateDataEmployee', data);
+      this.isLoading = true;
+
+      setTimeout(() => {
+        this.isLoading = false;
+        this.$router.push('/employee');
+        setTimeout(() => {
+          this.showToas();
+        }, 3000);
+      }, 5000);
     },
     reset() {
       this.$formulate.reset('employee-form');
@@ -345,6 +366,22 @@ export default {
     cancelReset() {
       this.dataEmployee = this.$store.state.employee.employeeSingleEdit;
       this.btnResetVisible = false;
+    },
+    showToas() {
+      this.$toasted.show('Data berhasil Diubah.', {
+        action: [
+          {
+            text: 'Close',
+            onClick: (e, toastObject) => {
+              toastObject.goAway(0);
+            }
+          }
+        ],
+        position: 'top-right',
+        icon: 'fa-gift',
+        duration: 3000,
+        keepOnHover: true
+      });
     }
   }
 };
@@ -367,5 +404,8 @@ export default {
   .h-custom-insert-employee {
     height: 36rem;
   }
+}
+.loading-custom {
+  opacity: 0.1;
 }
 </style>

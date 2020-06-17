@@ -1,6 +1,12 @@
 <template>
   <div class="mx-auto mt-4">
     <BackArrow />
+    <div
+      v-if="isLoading"
+      class="absolute flex items-center justify-center inset-0 w-full h-full bg-black loading-custom"
+    >
+      <LoadingCustom />
+    </div>
     <div class="w-full h-custom-insert-employee p-5 lg:overflow-y-auto scr-custom lg:pr-2">
       <FormulateForm
         class="employee-form nl-transition"
@@ -310,20 +316,46 @@
 
 <script>
 import BackArrow from '@/components/dashboard/BackArrow';
+import LoadingCustom from '@/components/LoadingCustom';
 export default {
   layout: 'dashboard',
-  components: { BackArrow },
+  components: { BackArrow, LoadingCustom },
   data() {
     return {
-      dataEmployee: {}
+      dataEmployee: {},
+      isLoading: false
     };
   },
   methods: {
     sendingData() {
-      console.log(this.dataEmployee);
+      this.$store.dispatch('employee/addDataEmployee', this.dataEmployee);
+      this.isLoading = true;
+      setTimeout(() => {
+        this.isLoading = false;
+        this.$router.push('/employee');
+        setTimeout(() => {
+          this.showToas();
+        }, 3000);
+      }, 5000);
     },
     reset() {
       this.$formulate.reset('employee-form');
+    },
+    showToas() {
+      this.$toasted.show('Data berhasil Ditambahkan', {
+        action: [
+          {
+            text: 'Close',
+            onClick: (e, toastObject) => {
+              toastObject.goAway(0);
+            }
+          }
+        ],
+        position: 'top-right',
+        icon: 'fa-gift',
+        duration: 3000,
+        keepOnHover: true
+      });
     }
   }
 };
@@ -346,5 +378,8 @@ export default {
   .h-custom-insert-employee {
     height: 36rem;
   }
+}
+.loading-custom {
+  opacity: 0.08;
 }
 </style>

@@ -27,9 +27,7 @@ export const actions = {
    async loadSingleEditEmployee({ commit }, idEmployee) {
       const response = await this.$axios.$get(`/rest-biodata/${idEmployee}`);
 
-      let gender;
-      if (response.gender == true) gender = 1;
-      else if (response.gender == false) gender = 2;
+      let gender = response.gender == true ? (gender = 1) : (gender = 2);
 
       const employeeSingleEdit = {
          fullName: response.fullName,
@@ -68,5 +66,31 @@ export const actions = {
       };
 
       commit('SET_SINGLE_EDIT_EMPLOYEE', employeeSingleEdit);
+   },
+   async addDataEmployee({ commit }, employee) {
+      if (employee) await this.$axios.$post(`/rest-biodata`, employee);
+      else return;
+
+      const response = await this.$axios.$get(`/rest-biodata/page`);
+      commit('SET_DATA_EMPLOYEE', response);
+   },
+   async updateDataEmployee({ commit }, data) {
+      try {
+         if (data.id && data.employee)
+            await this.$axios.$put(`/rest-biodata/${data.id}`, data.employee);
+         else return;
+
+         const response = await this.$axios.$get(`/rest-biodata/page`);
+         commit('SET_DATA_EMPLOYEE', response);
+      } catch (error) {
+         console.log(error);
+      }
+   },
+   async deleteDataEmployee({ commit }, idEmployee) {
+      if (idEmployee) await this.$axios.$delete(`/rest-biodata/${idEmployee}`);
+      else return;
+
+      const response = await this.$axios.$get(`/rest-biodata/page`);
+      commit('SET_DATA_EMPLOYEE', response);
    }
 };

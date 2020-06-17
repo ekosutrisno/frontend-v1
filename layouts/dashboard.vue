@@ -20,6 +20,7 @@ import HeaderMainTop from '@/components/dashboard/HeaderMainTop';
 
 export default {
   name: 'dashboard',
+  middleware: 'loadAllDataEmployee',
   components: { LeftSidebar, NavbarFooter, HeaderMainTop }
 };
 </script>
