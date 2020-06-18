@@ -235,7 +235,6 @@
               Home
             </div>
           </div>
-
         </nuxt-link>
       </div>
     </div>

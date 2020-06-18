@@ -1,6 +1,7 @@
 
 <template>
   <div class="flex flex-col mt-2 p-3 h-auto cursor-pointer dark:shadow-lg rounded-lg border border-gray-400 dark:border-gray-800 hover:bg-gray-hover dark-hover:bg-xsis-light-base">
+    <LoadingCustom v-if="isLoading" />
     <div class="flex items-center justify-between">
       <div class="flex flex-col lg:flex-row lg:items-center lg:space-x-5">
         <div>
@@ -28,7 +29,7 @@
           class="btn-util-sm rounded"
         ><i class="fa fa-pencil fa-sm"></i></nuxt-link>
         <button
-          @click=" deleteEmployee(employee.id)"
+          @click=" setIdDeleteEmployee(employee.id)"
           v-tooltip="{ content: 'Delete Employee', classes: 'text-xs' }"
           class="py-1 px-3 text-sm rounded border border-green-secondary bg-gray-200 dark:bg-xsis-light-base text-gray-500 hover:bg-green-secondary hover:text-xsis-dark-base focus:outline-none"
         ><i class="fa fa-trash fa-sm"></i></button>
@@ -51,17 +52,81 @@
 </template>
 
 <script>
+import LoadingCustom from '@/components/LoadingCustom';
 export default {
   props: {
     employee: {
       type: Object,
-      required: true
+      required: true,
+      idDeleteEmployee: null
     }
+  },
+  components: { LoadingCustom },
+  data() {
+    return {
+      isLoading: false
+    };
   },
   name: 'CardEmployee',
   methods: {
-    deleteEmployee(id) {
-      this.$store.dispatch('employee/deleteDataEmployee', id);
+    setIdDeleteEmployee(id) {
+      this.idDeleteEmployee = id;
+      this.showToas();
+    },
+    deleteEmployee() {
+      this.$store.dispatch(
+        'employee/deleteDataEmployee',
+        this.idDeleteEmployee
+      );
+    },
+    showToas() {
+      this.$toasted.show('Anda akan menghapus data employe?', {
+        action: [
+          {
+            text: 'Delete',
+            onClick: (e, toastObject) => {
+              this.isLoading = true;
+              setTimeout(() => {
+                this.deleteEmployee();
+              }, 4000);
+              toastObject.goAway(0);
+              setTimeout(() => {
+                this.isLoading = false;
+                setTimeout(() => {
+                  this.showInfoToas();
+                }, 3000);
+              }, 5000);
+            }
+          },
+          {
+            text: 'Cancel',
+            onClick: (e, toastObject) => {
+              toastObject.goAway(0);
+              this.idDeleteEmployee = null;
+            }
+          }
+        ],
+        position: 'top-center',
+        icon: 'fa-question',
+        className: 'h-64',
+        fitToScreen: true
+      });
+    },
+    showInfoToas() {
+      this.$toasted.show('Biodata employee deleted.', {
+        action: [
+          {
+            text: 'Close',
+            onClick: (e, toastObject) => {
+              toastObject.goAway(0);
+            }
+          }
+        ],
+        position: 'bottom-right',
+        icon: 'fa-info',
+        duration: 3000,
+        keepOnHover: true
+      });
     }
   }
 };

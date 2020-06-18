@@ -28,6 +28,9 @@ export default {
 .h-custom {
   height: 95vh;
 }
+.loading-custom {
+  opacity: 0.1;
+}
 .shadow-custom {
   box-shadow: 0 10px 12px rgba(20, 31, 56, 0.05);
 }

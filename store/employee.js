@@ -17,7 +17,9 @@ export const mutations = {
 
 export const actions = {
    async loadAllEmployee({ commit }) {
-      const response = await this.$axios.$get(`/rest-biodata/page`);
+      const response = await this.$axios.$get(
+         `/rest-biodata/page?sort=id,asc&size=2&page=3`
+      );
       commit('SET_DATA_EMPLOYEE', response);
    },
    async loadSingleEmployee({ commit }, idEmployee) {
@@ -62,7 +64,10 @@ export const actions = {
          region2: response.region2,
          maritalStatus: response.maritalStatus.id,
          identityType: response.identityType.id,
-         religion: response.religion.id
+         religion: response.religion.id,
+         marriageYear: response.marriageYear,
+         kecamatan1: response.kecamatan1,
+         kecamatan2: response.kecamatan2
       };
 
       commit('SET_SINGLE_EDIT_EMPLOYEE', employeeSingleEdit);

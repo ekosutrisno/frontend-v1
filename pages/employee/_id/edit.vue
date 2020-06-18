@@ -1,12 +1,7 @@
 <template>
   <div class="mx-auto mt-4">
     <BackArrow />
-    <div
-      v-if="isLoading"
-      class="absolute flex items-center justify-center inset-0 w-full h-full bg-black dark:bg-gray-100 loading-custom"
-    >
-      <LoadingCustom />
-    </div>
+    <LoadingCustom v-if="isLoading" />
     <div class="w-full h-custom-insert-employee p-5 lg:overflow-y-auto scr-custom lg:pr-2">
       <FormulateForm
         class="employee-form nl-transition"
@@ -70,6 +65,12 @@
             placeholder="Single"
             validation="required"
             :options="{1:'Single',2:'Menikah'}"
+          />
+          <FormulateInput
+            name="marriageYear"
+            type="date"
+            label="Tahun Pernikahan"
+            placeholder="2020"
           />
 
           <FormulateInput
@@ -216,6 +217,8 @@
             label="Addres Domisili"
             placeholder="Bandung"
           />
+        </div>
+        <div class="double-wide space-x-4">
           <FormulateInput
             name="kelurahan1"
             type="text"
@@ -228,6 +231,21 @@
             type="text"
             label="Keluarahan domisili"
             placeholder="Your kelurahan domisili"
+          />
+        </div>
+        <div class="double-wide space-x-4">
+          <FormulateInput
+            name="kecamatan1"
+            type="text"
+            label="Kecamatan 1 *"
+            placeholder="Your kecamatan"
+            validation="required"
+          />
+          <FormulateInput
+            name="kecamatan2"
+            type="text"
+            label="Kecamatan domisili"
+            placeholder="Your kecamatan domisili"
           />
         </div>
         <div class="double-wide space-x-4">
@@ -368,7 +386,7 @@ export default {
       this.btnResetVisible = false;
     },
     showToas() {
-      this.$toasted.show('Data berhasil Diubah.', {
+      this.$toasted.show('Data Employee updated.', {
         action: [
           {
             text: 'Close',
@@ -377,7 +395,7 @@ export default {
             }
           }
         ],
-        position: 'top-right',
+        position: 'bottom-right',
         icon: 'fa-gift',
         duration: 3000,
         keepOnHover: true
@@ -404,8 +422,5 @@ export default {
   .h-custom-insert-employee {
     height: 36rem;
   }
-}
-.loading-custom {
-  opacity: 0.1;
 }
 </style>
