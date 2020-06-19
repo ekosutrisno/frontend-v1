@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto mt-4">
+  <div class="mx-auto mt-4 pb-5">
     <BackArrow />
     <div class="flex flex-col mt-5 p-5 lg:mr-5 h-auto space-y-4 dark:shadow-lg rounded-lg border border-gray-400 dark:border-gray-800">
       <div class="flex items-start justify-between">
@@ -68,7 +68,7 @@
         </div>
         <div class="inline-flex items-center space-x-3">
           <label class="text-sm">Ethnic / Suku</label>
-          <h1 class="nama font-medium text-lg">Suku : {{employee.ethnic}}</h1>
+          <h1 class="nama font-medium text-lg"> : Suku {{employee.ethnic}}</h1>
         </div>
       </div>
       <div class="flex flex-col">
@@ -125,7 +125,7 @@
         </div>
       </div>
       <div class="flex items-center justify-end mt-8 space-x-3">
-        <div class="nama py-2 px-4 rounded bg-gray-200 dark:bg-xsis-light-base dark:shadow-lg rounded-full font-medium text-lg border border-gray-400 dark:border-xsis-bd-dark-primary">{{employee.identityType.nama}} : {{employee.identityNo}}</div>
+        <div class="nama py-2 px-4 rounded bg-gray-200 dark:bg-xsis-light-base dark:shadow-lg rounded-full font-medium text-lg border border-gray-400 dark:border-xsis-bd-dark-primary"><i class="fa fa-clipboard-list fa-fw fa-spin"></i> {{employee.identityType.nama}} : {{employee.identityNo}}</div>
       </div>
     </div>
     <div class="flex flex-col mt-5 p-5 lg:mr-5 h-auto space-y-4 dark:shadow-lg rounded-lg border border-gray-400 dark:border-gray-800">
@@ -155,11 +155,11 @@
         </div>
         <div class="inline-flex items-center space-x-3">
           <label class="text-sm">RW Asli</label>
-          <h1 class="nama font-medium text-lg">{{employee.rw1}}</h1>
+          <h1 class="nama font-medium text-lg">: {{employee.rw1}}</h1>
         </div>
         <div class="inline-flex items-center space-x-3">
           <label class="text-sm">RW Domisili</label>
-          <h1 class="nama font-medium text-lg">{{employee.rw2}}</h1>
+          <h1 class="nama font-medium text-lg">: {{employee.rw2}}</h1>
         </div>
       </div>
       <div class="flex flex-col">
@@ -211,40 +211,37 @@
       <div class="flex flex-col">
         <div class="inline-flex items-center space-x-3">
           <label class="text-sm">Kode Post 1</label>
-          <h1 class="nama font-medium text-lg">: {{employee.religion.nama}}</h1>
+          <h1 class="nama font-medium text-lg">: {{employee.postalCode1}}</h1>
         </div>
         <div class="inline-flex items-center space-x-3">
-          <label class="text-sm">Status Pernikahan</label>
-          <h1 class="nama font-medium text-lg">: {{employee.maritalStatus.nama}}</h1>
-        </div>
-        <div class="inline-flex items-center space-x-3">
-          <label class="text-sm">Tahun Menikah</label>
+          <label class="text-sm">Kode Post 2</label>
           <h1
-            v-if="employee.marriageYear"
+            v-if="employee.postalCode2"
             class="nama font-medium text-lg"
-          >: {{employee.marriageYear}}</h1>
+          >: {{employee.postalCode2}}</h1>
           <h1
             v-else
             class="nama font-medium text-lg"
-          >-</h1>
+          >: -</h1>
+        </div>
+        <div class="inline-flex items-center space-x-3">
+          <label class="text-sm">Region 1</label>
+          <h1 class="nama font-medium text-lg">{{employee.region1}}</h1>
+        </div>
+        <div class="inline-flex items-center space-x-3">
+          <label class="text-sm">Region 2</label>
+          <h1
+            v-if="employee.region2"
+            class="nama font-medium text-lg"
+          >: {{employee.region2}}</h1>
+          <h1
+            v-else
+            class="nama font-medium text-lg"
+          >: -</h1>
         </div>
       </div>
-      <div class="flex space-x-3">
-        <div class="inline-flex items-center space-x-3">
-          <label class="text-sm">Phone Number</label>
-          <h1 class="nama font-medium text-lg">: {{employee.phoneNumber1}}</h1>
-        </div>
-        <div class="inline-flex items-center space-x-3">
-          <label class="text-sm">Phone Number Backup</label>
-          <h1 class="nama font-medium text-lg">: {{employee.phoneNumber2}}</h1>
-        </div>
-        <div class="inline-flex items-center space-x-3">
-          <label class="text-sm">Parent Phone Number</label>
-          <h1 class="nama font-medium text-lg">: {{employee.parentPhoneNumber}}</h1>
-        </div>
-      </div>
-      <div class="flex items-center justify-end mt-8 space-x-3">
-        <div class="nama py-2 px-4 rounded bg-gray-200 dark:bg-xsis-light-base dark:shadow-lg rounded-full font-medium text-lg border border-gray-400 dark:border-xsis-bd-dark-primary">{{employee.identityType.nama}} : {{employee.identityNo}}</div>
+      <div class="desclimer py-2 px-4 rounded-lg bg-gray-200 dark:bg-xsis-light-base dark:shadow-lg border border-gray-400 dark:border-xsis-bd-dark-primary">
+        <span class="text-lg font-bold">&bull; Disclaimer: </span><span class="text-sm font-medium">Semua data yang yang dimasukkan oleh Employee sudah terverifikasi dan harus di pergunakan seperlunya dengan penuh hati-hati dan penuh tanggung jawab.</span>
       </div>
     </div>
   </div>
@@ -257,7 +254,7 @@ import { state } from '../../../store/employee';
 export default {
   layout: 'dashboard',
   components: { BackArrow },
-  created() {
+  beforeCreate() {
     this.$store.dispatch('employee/loadSingleEmployee', this.$route.params.id);
   },
   computed: {

@@ -90,7 +90,8 @@ export default {
     ** See https://axios.nuxtjs.org/options
     */
    axios: {
-      baseURL: `http://localhost:8088/xsisapp/api/v1`
+      // baseURL: `http://localhost:8088/xsisapp/api/v1`,s
+      baseURL: `http://localhost:8088/xsis-app`,
    },
    /*
     ** Build configuration

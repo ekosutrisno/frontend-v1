@@ -17,9 +17,7 @@ export const mutations = {
 
 export const actions = {
    async loadAllEmployee({ commit }) {
-      const response = await this.$axios.$get(
-         `/rest-biodata/page?sort=id,asc&size=2&page=3`
-      );
+      const response = await this.$axios.$get(`/rest-biodata/page?sort=id,asc`);
       commit('SET_DATA_EMPLOYEE', response);
    },
    async loadSingleEmployee({ commit }, idEmployee) {
