@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto mt-4">
+  <div class="mx-auto">
     <BackArrow />
     <div
       v-if="isLoading"
@@ -396,11 +396,6 @@ export default {
   .double-wide .formulate-input {
     flex-grow: 1;
     width: calc(50%);
-  }
-}
-@media only screen and (min-width: 992px) {
-  .h-custom-insert-employee {
-    height: 36rem;
   }
 }
 </style>

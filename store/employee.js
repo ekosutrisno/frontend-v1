@@ -20,6 +20,15 @@ export const actions = {
       const response = await this.$axios.$get(`/rest-biodata/page?sort=id,asc`);
       commit('SET_DATA_EMPLOYEE', response);
    },
+   async loadPagingAllEmployee({ commit }, data) {
+      let size = data.size ? data.size : 10;
+      let sort = data.sort ? data.sort : 'asc';
+
+      const response = await this.$axios.$get(
+         `/rest-biodata/page?sort=id,${sort}&size=${size}`
+      );
+      commit('SET_DATA_EMPLOYEE', response);
+   },
    async loadSingleEmployee({ commit }, idEmployee) {
       const response = await this.$axios.$get(`/rest-biodata/${idEmployee}`);
       commit('SET_SINGLE_EMPLOYEE', response);

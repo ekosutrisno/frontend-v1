@@ -1,7 +1,7 @@
 <template>
-  <div class="mx-auto mt-5 overflow-y-auto">
+  <div class="mx-auto">
     <div class="flex dark:shadow-lg w-full p-3 items-center justify-between rounded-lg border border-gray-400 dark:border-gray-800">
-      <div>
+      <div class="inline-flex items-center space-x-2">
         <FormulateInput
           name="employee"
           v-model="employee"
@@ -9,11 +9,17 @@
           label="Search Employee"
           placeholder="Employee"
         />
+        <FormulateInput
+          style="margin-bottom:-3px"
+          type="button"
+          label="Cari"
+          @click="searchEmployee"
+        />
         {{employee}}
       </div>
       <div class="inline-flex hidden sm:inline-flex">
         <div
-          class="flex items-end mr-4"
+          class="flex items-center mr-4"
           style="margin-bottom:1px"
         >
           <nuxt-link
@@ -32,17 +38,22 @@
           </div>
         </div>
 
-        <div class="mr-4 w-24">
+        <div class="mr-4 inline-flex items-center space-x-2">
           <FormulateInput
             type="number"
             validation="number"
-            min="10"
+            min="1"
             label="Row of View"
             value="10"
             max="100"
             v-model.number="pages"
-            @keyup="getNewDataPaging"
             placeholder="20 Rows"
+          />
+          <FormulateInput
+            element-class="mb-0"
+            type="button"
+            label="Cari"
+            @click="getNewDataPaging('asc')"
           />
         </div>
         <div>
@@ -50,13 +61,13 @@
           <div>
             <i
               v-tooltip="{ content: 'Order Ascending', classes: 'text-xs' }"
-              @click="onClikBtn('ASC')"
+              @click="getNewDataPaging('asc')"
               class="fa fa-sort-amount-up-alt"
             >
             </i>
             <i
               v-tooltip="{ content: 'Order Descending', classes: 'text-xs' }"
-              @click="onClikBtn('DESC')"
+              @click="getNewDataPaging('desc')"
               class="fa fa-sort-amount-down"
             >
             </i>
@@ -65,10 +76,7 @@
       </div>
     </div>
     <div class="pt-3">
-      <div
-        class="scr-custom-sm nl-transition lg:pr-2 mt-2 overflow-y-auto"
-        style="height:30rem"
-      >
+      <div class="scr-custom-sm nl-transition lg:pr-2 overflow-y-auto h-style">
         <CardEmployee
           v-for="employee in employees.content"
           :key="employee.id"
@@ -99,18 +107,22 @@ export default {
     })
   },
   methods: {
-    onClikBtn(pram) {
-      alert(`${pram}`);
+    getNewDataPaging(param) {
+      const data = {
+        size: this.pages,
+        sort: param
+      };
+      this.$store.dispatch('employee/loadPagingAllEmployee', data);
     },
-    getNewDataPaging() {
-      alert('New Paging');
+    searchEmployee() {
+      alert(this.employee);
     }
   }
 };
 </script>
 
 <style scoped>
-.h-sayle {
-  height: 31rem;
+.h-style {
+  height: 28rem;
 }
 </style>

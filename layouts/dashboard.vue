@@ -5,7 +5,7 @@
     </div>
     <div class="flex-1 w-screen mx-auto lg:ml-70 p-6 pb-20 lg:pb-0 lg:pt-0">
       <HeaderMainTop />
-      <div class="pr-2 lg:pr-0 lg:h-custom-two h-custom-one overflow-y-auto scr-custom-sm">
+      <div class="pr-2 py-4 lg:h-custom-two h-custom-one overflow-y-auto scr-custom-sm">
         <nuxt />
       </div>
     </div>
@@ -37,6 +37,13 @@ export default {
 .nl-transition {
   animation: 0.5s appear;
 }
+
+@media only screen and (min-width: 992px) {
+  .h-custom-insert-employee {
+    height: 34.7rem;
+  }
+}
+
 @keyframes appear {
   0% {
     opacity: 0;

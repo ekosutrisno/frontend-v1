@@ -74,8 +74,8 @@ module.exports = {
             '72': '20rem',
             fixed: '63.75rem',
             main: '31rem',
-            'custom-one': 'calc(100vh - (9.75rem))',
-            'custom-two': 'calc(100vh - (3.2rem))'
+            'custom-one': 'calc(100vh - (10rem))',
+            'custom-two': 'calc(100vh - (3.5rem))'
          }
       }
    },

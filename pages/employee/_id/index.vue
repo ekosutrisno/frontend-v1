@@ -1,7 +1,7 @@
 <template>
-  <div class="mx-auto mt-4 pb-5">
+  <div class="mx-auto pb-5">
     <BackArrow />
-    <div class="flex flex-col mt-5 p-5 lg:mr-5 h-auto space-y-4 dark:shadow-lg rounded-lg border border-gray-400 dark:border-gray-800">
+    <div class="flex nl-transition flex-col mt-5 p-5 lg:mr-5 h-auto space-y-4 dark:shadow-lg rounded-lg border border-gray-400 dark:border-gray-800">
       <div class="flex items-start justify-between">
         <div class="flex space-x-2 items-center justify-between">
           <span class="text-green-secondary font-semibold"> <i class="fa fa-paperclip"></i> Biodata</span>
@@ -35,7 +35,6 @@
           </div>
         </div>
       </div>
-
       <div class="flex flex-col">
         <div class="inline-flex items-center space-x-3">
           <label class="text-sm">Place of Birth</label>
@@ -92,11 +91,11 @@
       <div class="flex flex-col">
         <div class="inline-flex items-center space-x-3">
           <label class="text-sm">Agama</label>
-          <h1 class="nama font-medium text-lg">: {{employee.religion.nama}}</h1>
+          <h1 class="nama font-medium text-lg">: {{employee.religion ?employee.religion.nama:'Agama' }}</h1>
         </div>
         <div class="inline-flex items-center space-x-3">
           <label class="text-sm">Status Pernikahan</label>
-          <h1 class="nama font-medium text-lg">: {{employee.maritalStatus.nama}}</h1>
+          <h1 class="nama font-medium text-lg">: {{employee.maritalStatus? employee.maritalStatus.nama:'Status'}}</h1>
         </div>
         <div class="inline-flex items-center space-x-3">
           <label class="text-sm">Tahun Menikah</label>
@@ -125,7 +124,7 @@
         </div>
       </div>
       <div class="flex items-center justify-end mt-8 space-x-3">
-        <div class="nama py-2 px-4 rounded bg-gray-200 dark:bg-xsis-light-base dark:shadow-lg rounded-full font-medium text-lg border border-gray-400 dark:border-xsis-bd-dark-primary"><i class="fa fa-clipboard-list fa-fw fa-spin"></i> {{employee.identityType.nama}} : {{employee.identityNo}}</div>
+        <div class="nama py-2 px-4 rounded bg-gray-200 dark:bg-xsis-light-base dark:shadow-lg rounded-full font-medium text-lg border border-gray-400 dark:border-xsis-bd-dark-primary"><i class="fa fa-clipboard-list fa-fw fa-sm"></i> {{employee.identityType?employee.identityType.nama:'ID'}} : {{employee.identityNo}}</div>
       </div>
     </div>
     <div class="flex flex-col mt-5 p-5 lg:mr-5 h-auto space-y-4 dark:shadow-lg rounded-lg border border-gray-400 dark:border-gray-800">
@@ -241,7 +240,7 @@
         </div>
       </div>
       <div class="desclimer py-2 px-4 rounded-lg bg-gray-200 dark:bg-xsis-light-base dark:shadow-lg border border-gray-400 dark:border-xsis-bd-dark-primary">
-        <span class="text-lg font-bold">&bull; Disclaimer: </span><span class="text-sm font-medium">Semua data yang yang dimasukkan oleh Employee sudah terverifikasi dan harus di pergunakan seperlunya dengan penuh hati-hati dan penuh tanggung jawab.</span>
+        <span class="text-lg font-bold">&bull; Disclaimer: </span><span class="text-sm font-medium">Semua data yang yang dimasukkan oleh Employee sudah terverifikasi dan dapat pergunakan dengan penuh hati-hati dan tanggung jawab.</span>
       </div>
     </div>
   </div>
