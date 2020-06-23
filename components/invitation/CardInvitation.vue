@@ -1,6 +1,8 @@
 
 <template>
-  <div class="flex flex-col mt-2 p-3 h-auto cursor-pointer dark:shadow-lg rounded-lg border border-gray-400 dark:border-gray-800 hover:bg-gray-hover dark-hover:bg-xsis-light-base">
+  <div
+    class="flex flex-col mt-2 p-3 h-auto cursor-pointer dark:shadow-lg rounded-lg border border-gray-400 dark:border-gray-800 hover:bg-gray-hover dark-hover:bg-xsis-light-base"
+  >
     <LoadingCustom v-if="isLoading" />
     <div class="flex items-center justify-between">
       <div class="flex flex-col lg:flex-row lg:items-center lg:space-x-5">
@@ -25,24 +27,30 @@
         <label class="text-sm hidden sm:block">Action:</label>
         <nuxt-link
           :to="{name:'invitation-id-edit',params:{id: invitation.id}}"
-          v-tooltip="{ content: 'Edit Employee', classes: 'text-xs' }"
+          v-tooltip="{ content: 'Edit Invitation', classes: 'text-xs' }"
           class="btn-util-sm rounded"
-        ><i class="fa fa-pencil fa-sm"></i></nuxt-link>
+        >
+          <i class="fa fa-pencil fa-sm"></i>
+        </nuxt-link>
         <button
           @click=" setIdDeleteInvitation(invitation.id)"
-          v-tooltip="{ content: 'Delete Employee', classes: 'text-xs' }"
+          v-tooltip="{ content: 'Delete Invitation', classes: 'text-xs' }"
           class="py-1 px-3 text-sm rounded border border-green-secondary bg-gray-200 dark:bg-xsis-light-base text-gray-500 hover:bg-green-secondary hover:text-xsis-dark-base focus:outline-none"
-        ><i class="fa fa-trash fa-sm"></i></button>
+        >
+          <i class="fa fa-trash fa-sm"></i>
+        </button>
       </div>
     </div>
     <div class="flex items-center justify-between mt-4">
       <nuxt-link
         class="py-1 px-2 rounded hover:bg-gray-400"
         :to="{name:'invitation-id', params: { id: invitation.id}}"
-      ><i class="fa fa-fw fa-mouse"></i>Click here for detail</nuxt-link>
+        :prefetch="false"
+      >
+        <i class="fa fa-fw fa-mouse"></i>Click here for detail
+      </nuxt-link>
     </div>
   </div>
-
 </template>
 
 <script>

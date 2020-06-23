@@ -23,7 +23,7 @@
           style="margin-bottom:1px"
         >
           <nuxt-link
-            v-tooltip="{ content: 'Tambah data employee', classes: 'text-xs' }"
+            v-tooltip="{ content: 'Add Employee', classes: 'text-xs' }"
             :to="{name:'employee-insert'}"
             class="py-2 px-4 rounded w-full sm:w-auto rounded-sm focus:outline-none font-medium text-gray-font bg-green-secondary hover:bg-green-light"
           ><i class="fa fa-plus"></i>

@@ -10,7 +10,13 @@
         @submit="sendingData"
       >
         <div class="mb-3 pb-2 border-b border-gray-400 dark:border-gray-800">
-          <i class="fa fa-fw fa-exclamation-triangle"></i> Mohon Lengkapi <span class="px-1 text-xs border border-green-secondary font-semibold rounded">form edit employee</span> berikut dengan data yang benar dan dapat dipertanggung jawabkan. Tanda <span class="text-red-400 font-semibold">(*)</span> wajib diisi.
+          <i class="fa fa-fw fa-exclamation-triangle"></i> Mohon Lengkapi
+          <span
+            class="px-1 text-xs border border-green-secondary font-semibold rounded"
+          >form edit employee</span> berikut dengan data yang benar dan dapat dipertanggung jawabkan. Tanda
+          <span
+            class="text-red-400 font-semibold"
+          >(*)</span> wajib diisi.
         </div>
         <div class="mb-3 w-56 pb-2 font-semibold border-b border-gray-400 dark:border-gray-800">
           <i class="fa fa-fw fa-dot-circle fa-xs"></i> Profile Biodata
@@ -48,7 +54,6 @@
           />
         </div>
         <div class="double-wide space-x-4">
-
           <FormulateInput
             name="religion"
             type="select"
@@ -117,12 +122,7 @@
           />
         </div>
         <div class="double-wide space-x-4">
-          <FormulateInput
-            name="hobby"
-            type="text"
-            label="Hobby"
-            placeholder="Your Hobbi"
-          />
+          <FormulateInput name="hobby" type="text" label="Hobby" placeholder="Your Hobbi" />
           <FormulateInput
             name="ethnic"
             type="text"
@@ -306,18 +306,10 @@
             placeholder="Palembang Timur"
             validation="required"
           />
-          <FormulateInput
-            name="region2"
-            type="text"
-            label="Region 2"
-            placeholder="Ogan Ilir"
-          />
+          <FormulateInput name="region2" type="text" label="Region 2" placeholder="Ogan Ilir" />
         </div>
         <div class="flex space-x-3">
-          <FormulateInput
-            type="submit"
-            label="Kirim data"
-          />
+          <FormulateInput type="submit" label="Kirim data" />
           <FormulateInput
             v-if="!btnResetVisible"
             type="button"
@@ -335,7 +327,6 @@
         </div>
       </FormulateForm>
     </div>
-
   </div>
 </template>
 

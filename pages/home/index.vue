@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto lg:mt-16">
+  <div class="mx-auto">
     <button class="btn-util rounded">Home Page Dashboard</button>
   </div>
 </template>

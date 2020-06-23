@@ -1,11 +1,18 @@
 <template>
-  <a
-    href="javascript:history.back()"
-    class="text-base font-semibold hover:text-green-secondary"
-  ><i class="fa fa-fw fa-arrow-left"></i>Back</a>
+  <button
+    @click="back"
+    class="text-base font-semibold focus:outline-none text-green-secondary hover:text-green-light"
+  >
+    <i class="fa fa-fw fa-arrow-left"></i> Back
+  </button>
 </template>
 <script>
 export default {
-  name: 'BackArrow'
+  name: 'BackArrow',
+  methods: {
+    back() {
+      this.$router.back();
+    }
+  }
 };
 </script>
