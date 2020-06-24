@@ -23,13 +23,19 @@ export const actions = {
       let sort = data.sort ? data.sort : 'asc';
 
       const response = await this.$axios.$get(
-         `/rest-undangan/page?sort=id,${sort}&size=${size}`
+         `/rest-undangan/page?sort=invitationDate,${sort}&size=${size}`
       );
       commit('SET_ALL_INVITATION', response);
    },
    async loadSingleInvitation({ commit }, idInvitation) {
       const response = await this.$axios.$get(`/rest-undangan/${idInvitation}`);
       commit('SET_SINGLE_INVITATION', response);
+   },
+   async addDataInvitation({ commit }, data) {
+      await this.$axios.$post(`/rest-undangan/`, data);
+
+      const response = await this.$axios.$get(`/rest-undangan/page`);
+      commit('SET_ALL_INVITATION', response);
    },
    async deleteInvitation({ commit }, idInvitation) {
       if (idInvitation)

@@ -1,7 +1,8 @@
 export const state = () => ({
    employees: {},
    employee: {},
-   employeeSingleEdit: {}
+   employeeSingleEdit: {},
+   roAndTro: []
 });
 
 export const getters = {
@@ -12,13 +13,18 @@ export const mutations = {
    SET_DATA_EMPLOYEE: (state, employees) => (state.employees = employees),
    SET_SINGLE_EMPLOYEE: (state, employee) => (state.employee = employee),
    SET_SINGLE_EDIT_EMPLOYEE: (state, employeeSingleEdit) =>
-      (state.employeeSingleEdit = employeeSingleEdit)
+      (state.employeeSingleEdit = employeeSingleEdit),
+   SET_RO_TRO: (state, roAndTro) =>
+      (state.roAndTro = roAndTro)
 };
 
 export const actions = {
    async loadAllEmployee({ commit }) {
       const response = await this.$axios.$get(`/rest-biodata/page?sort=id,asc`);
       commit('SET_DATA_EMPLOYEE', response);
+
+      const roAndTro = await this.$axios.$get(`/rest-employee/ero`);
+      commit('SET_RO_TRO', roAndTro);
    },
    async loadPagingAllEmployee({ commit }, data) {
       let size = data.size ? data.size : 10;

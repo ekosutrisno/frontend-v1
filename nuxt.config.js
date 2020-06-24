@@ -64,6 +64,10 @@ export default {
          ssr: true
       },
       {
+         src: '~/plugins/vue-select.js',
+         ssr: true
+      },
+      {
          src: '~/plugins/vue-toasted.js',
          ssr: false
       }
@@ -100,6 +104,6 @@ export default {
       /*
        ** You can extend webpack config here
        */
-      extend(config, ctx) {}
+      extend(config, ctx) { }
    }
 };

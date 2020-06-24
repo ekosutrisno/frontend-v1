@@ -70,7 +70,7 @@
               <label class="text-sm">TRO Email</label>
               <h1
                 class="nama font-medium text-lg"
-              >: {{invitation.tro ? invitation.tro.eroEmai:' -'}}</h1>
+              >: {{invitation.tro ? invitation.tro.eroEmail:' -'}}</h1>
             </div>
             <div class="inline-flex items-center space-x-3 mt-4">
               <label class="text-sm">Other RO Name</label>
@@ -80,13 +80,13 @@
               <label class="text-sm">To Employee</label>
               <h1
                 class="nama font-medium text-lg"
-              >: {{invitation.biodataId?invitation.biodataId.fullName:' -'}}</h1>
+              >: {{invitation.biodataId ? invitation.biodataId.fullName:' -'}}</h1>
             </div>
             <div class="inline-flex items-center space-x-3">
               <label class="text-sm">To Employee Email</label>
               <h1
                 class="nama font-medium text-lg"
-              >: {{invitation.biodataId ?invitation.biodataId.email:' -'}}</h1>
+              >: {{invitation.biodataId ? invitation.biodataId.email:' -'}}</h1>
             </div>
           </div>
         </div>
