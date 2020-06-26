@@ -349,6 +349,8 @@ export default {
       'employee/loadSingleEditEmployee',
       this.$route.params.id
     );
+  },
+  created() {
     this.dataEmployee = this.$store.state.employee.employeeSingleEdit;
   },
   methods: {

@@ -31,8 +31,33 @@ export const actions = {
       const response = await this.$axios.$get(`/rest-undangan/${idInvitation}`);
       commit('SET_SINGLE_INVITATION', response);
    },
+   async loadSingleEditInvitation({ commit }, idInvitation) {
+      const response = await this.$axios.$get(`/rest-undangan/${idInvitation}`);
+
+      const dataInvitation = {
+         invitationCode: response.invitationCode,
+         invitationDate: response.invitationDate,
+         ro: { id: response.ro.id },
+         tro: { id: response.tro.id },
+         scheduleTypeId: { id: response.scheduleTypeId.id },
+         biodataId: { id: response.biodataId.id },
+         location: response.location,
+         notes: response.notes,
+         otherRoTro: response.otherRoTro,
+         status: response.status,
+         time: response.time
+      };
+
+      commit('SET_SINGLE_EDIT_INVITATION', response);
+   },
    async addDataInvitation({ commit }, data) {
       await this.$axios.$post(`/rest-undangan/`, data);
+
+      const response = await this.$axios.$get(`/rest-undangan/page`);
+      commit('SET_ALL_INVITATION', response);
+   },
+   async updateDataInvitation({ commit }, data) {
+      await this.$axios.$put(`/rest-undangan/${data.id}`, data.invitation);
 
       const response = await this.$axios.$get(`/rest-undangan/page`);
       commit('SET_ALL_INVITATION', response);
