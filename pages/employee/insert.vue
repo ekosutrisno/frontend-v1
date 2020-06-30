@@ -15,7 +15,15 @@
         @submit="sendingData"
       >
         <div class="mb-3 pb-2 border-b border-gray-400 dark:border-gray-800">
-          <span class="block"><i class="fa fa-fw fa-exclamation-triangle"></i> Mohon Lengkapi <span class="px-1 text-xs border border-green-secondary font-semibold rounded">form add employee</span> berikut dengan data yang benar dan dapat dipertanggung jawabkan. Tanda <span class="text-red-400 font-semibold">(*)</span> wajib diisi.</span>
+          <span class="block">
+            <i class="fa fa-fw fa-exclamation-triangle"></i> Mohon Lengkapi
+            <span
+              class="px-1 text-xs border border-green-secondary font-semibold rounded"
+            >form add employee</span> berikut dengan data yang benar dan dapat dipertanggung jawabkan. Tanda
+            <span
+              class="text-red-400 font-semibold"
+            >(*)</span> wajib diisi.
+          </span>
         </div>
         <div class="mb-3 w-56 pb-2 font-semibold border-b border-gray-400 dark:border-gray-800">
           <i class="fa fa-fw fa-dot-circle fa-xs"></i> Profile Biodata
@@ -53,26 +61,52 @@
             validation="required"
           />
         </div>
+        <div class="flex -ml-4 space-x-4 mb-6">
+          <FormulateInput class="hidden" name="religion" />
+          <v-select
+            class="w-full"
+            v-model.number="dataEmployee.religion"
+            :reduce="agama=>agama.id"
+            placeholder="Pilih agama*"
+            label="nama"
+            :value="agama=>agama.nama"
+            :options="agama"
+          ></v-select>
+
+          <FormulateInput name="maritalStatus" class="hidden" />
+          <v-select
+            class="w-full"
+            v-model.number="dataEmployee.maritalStatus"
+            :reduce="status=>status.id"
+            placeholder="Pilih status*"
+            label="nama"
+            :value="status=>status.nama"
+            :options="status"
+          ></v-select>
+
+          <FormulateInput name="gender" class="hidden" />
+          <v-select
+            class="w-full"
+            v-model.number="dataEmployee.gender"
+            :reduce="genders=>genders.id"
+            placeholder="Pilih tipe gender*"
+            label="nama"
+            :value="genders=>genders.nama"
+            :options="genders"
+          ></v-select>
+
+          <FormulateInput name="identityType" class="hidden" />
+          <v-select
+            class="w-full"
+            v-model.number="dataEmployee.identityType"
+            :reduce="tipeIdentitas=>tipeIdentitas.id"
+            placeholder="Pilih tipe Identitas*"
+            label="nama"
+            :value="tipeIdentitas=>tipeIdentitas.nama"
+            :options="tipeIdentitas"
+          ></v-select>
+        </div>
         <div class="double-wide space-x-4">
-
-          <FormulateInput
-            name="religion"
-            type="select"
-            label="Agama*"
-            placeholder="Islam, Hindu..."
-            validation="required"
-            :options="{1:'Islam',2:'Hindu',3:'Protestan',4:'Khatolik',5:'Budha',6:'Konghucu'}"
-          />
-
-          <FormulateInput
-            name="maritalStatus"
-            type="select"
-            label="Status Pernikahan*"
-            placeholder="Single"
-            validation="required"
-            :options="{1:'Single',2:'Menikah'}"
-          />
-
           <FormulateInput
             name="marriageYear"
             type="date"
@@ -80,24 +114,6 @@
             placeholder="2020"
           />
 
-          <FormulateInput
-            name="identityType"
-            type="select"
-            label="Tipe Identitas*"
-            placeholder="KTP, SIM..."
-            validation="required"
-            :options="{1:'KTP',2:'SIM',3:'PASSPORT'}"
-          />
-        </div>
-        <div class="double-wide space-x-4">
-          <FormulateInput
-            name="gender"
-            type="select"
-            label="Gender *"
-            placeholder="Choose gender"
-            validation="required"
-            :options="{1:'Laki',2:'Cewe'}"
-          />
           <FormulateInput
             name="nationality"
             type="text"
@@ -124,12 +140,7 @@
           />
         </div>
         <div class="double-wide space-x-4">
-          <FormulateInput
-            name="hobby"
-            type="text"
-            label="Hobby"
-            placeholder="Your Hobbi"
-          />
+          <FormulateInput name="hobby" type="text" label="Hobby" placeholder="Your Hobbi" />
           <FormulateInput
             name="ethnic"
             type="text"
@@ -313,32 +324,19 @@
             placeholder="Palembang Timur"
             validation="required"
           />
-          <FormulateInput
-            name="region2"
-            type="text"
-            label="Region 2"
-            placeholder="Ogan Ilir"
-          />
+          <FormulateInput name="region2" type="text" label="Region 2" placeholder="Ogan Ilir" />
         </div>
         <div class="flex space-x-3">
-          <FormulateInput
-            type="submit"
-            label="Kirim data"
-          />
-          <FormulateInput
-            type="button"
-            label="Reset data"
-            data-ghost
-            @click="reset"
-          />
+          <FormulateInput type="submit" label="Kirim data" />
+          <FormulateInput type="button" label="Reset data" data-ghost @click="reset" />
         </div>
       </FormulateForm>
     </div>
-
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import BackArrow from '@/components/dashboard/BackArrow';
 import LoadingCustom from '@/components/LoadingCustom';
 export default {
@@ -347,8 +345,25 @@ export default {
   data() {
     return {
       dataEmployee: {},
-      isLoading: false
+      isLoading: false,
+      genders: [
+        {
+          id: 1,
+          nama: 'Laki-laki'
+        },
+        {
+          id: 2,
+          nama: 'Perempuan'
+        }
+      ]
     };
+  },
+  computed: {
+    ...mapState({
+      agama: state => state.religions,
+      status: state => state.maritalStatus,
+      tipeIdentitas: state => state.identityType
+    })
   },
   methods: {
     sendingData() {

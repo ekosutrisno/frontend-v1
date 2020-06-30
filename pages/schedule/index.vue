@@ -1,63 +1,11 @@
 <template>
   <div class="mx-auto mt-2">
-    <div class="flex items-center justify-center">
-      <FormulateForm
-        class="login-form"
-        name="login-form"
-        v-model="formValues"
-        @submit="send"
-      >
-        <div>
-          <h2 class="form-title">Register</h2>
-          <p>
-            You can place any elements you want inside a form. The inputs themselves
-            can even be deeply nested.
-          </p>
-          <FormulateInput
-            name="name"
-            type="text"
-            label="Your name"
-            placeholder="Your name"
-            validation="required"
-          />
-          <FormulateInput
-            name="email"
-            type="email"
-            label="Email address"
-            placeholder="Email address"
-            validation="required|email"
-          />
-          <div class="double-wide">
-            <FormulateInput
-              name="password"
-              type="password"
-              label="Password"
-              placeholder="Your password"
-              validation="required"
-              autocomplete
-            />
-            <FormulateInput
-              name="password_confirm"
-              type="password"
-              label="Confirm your password"
-              placeholder="Confirm password"
-              validation="required|confirm"
-              validation-name="Confirmation"
-              autocomplete
-            />
-          </div>
-          <FormulateInput
-            type="submit"
-            label="Register"
-          />
-          <FormulateInput
-            type="button"
-            label="Reset"
-            data-ghost
-            @click="reset"
-          />
-        </div>
-      </FormulateForm>
+    <div class="flex items-center justify-center">schedule Page</div>
+
+    <div class="relative top-0 left-0 mx-10 h-32 bg-cst w-full rounded-lg"></div>
+    <div class="bg-xsis-bg-light-primary w-full p-10 flex">
+      <div class="soft-shadow mt-10 mx-auto mr-24"></div>
+      <div class="soft-shadow-1 mt-10 mx-auto"></div>
     </div>
   </div>
 </template>
@@ -83,33 +31,41 @@ export default {
 </script>
 
 <style scoped>
-.login-form {
-  padding: 2em;
-  border: 1px solid #a8a8a8;
-  border-radius: 0.5em;
-  max-width: 500px;
-  box-sizing: border-box;
-}
-.form-title {
-  margin-top: 0;
+@media (min-width: 420px) {
 }
 
-.login-form::v-deep .formulate-input .formulate-input-element {
-  max-width: none;
+.bg-cst {
+  /* background-color: rgba(34, 34, 34, 0.7); */
+  background-color: rgba(255, 255, 255, 0.2);
 }
-@media (min-width: 420px) {
-  .double-wide {
-    display: flex;
-  }
-  .double-wide .formulate-input {
-    flex-grow: 1;
-    width: calc(50% - 0.5em);
-  }
-  .double-wide .formulate-input:first-child {
-    margin-right: 0.5em;
-  }
-  .double-wide .formulate-input:last-child {
-    margin-left: 0.5em;
-  }
+.bg-cst::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 85px;
+  background: #f1f1f1;
+  box-shadow: -15px -15px 10px rgba(255, 255, 255, 0.5),
+    15px 15px 10px rgba(0, 0, 0, 0.05);
+  clip-path: polygon(100% 0, 0 100%, 100% 100%);
+}
+
+.soft-shadow {
+  width: 250px;
+  height: 250px;
+  border-radius: 25px;
+  background: #f3f5f4;
+  box-shadow: -15px -15px 10px rgba(255, 255, 255, 0.5),
+    15px 15px 10px rgba(0, 0, 0, 0.05);
+}
+.soft-shadow-1 {
+  width: 250px;
+  height: 250px;
+  border-radius: 25px;
+  background: #f3f5f4;
+  box-shadow: -15px -15px 10px rgba(255, 255, 255, 0.5),
+    15px 15px 10px rgba(0, 0, 0, 0), inset 4px 4px 5px rgba(255, 255, 255, 0.8),
+    inset -4px -4px 5px rgba(0, 0, 0, 0.05), 0 50px 40px rgba(0, 0, 0, 0.05);
 }
 </style>
