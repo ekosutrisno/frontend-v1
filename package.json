@@ -25,6 +25,7 @@
     "@nuxtjs/color-mode": "^1.0.0",
     "@nuxtjs/svg": "^0.1.11",
     "@nuxtjs/tailwindcss": "^1.0.0",
+    "lodash": ">=4.17.19",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-prettier": "^3.1.4",
     "prettier": "^1.19.1",
