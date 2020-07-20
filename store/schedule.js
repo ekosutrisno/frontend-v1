@@ -22,7 +22,7 @@ export const actions = {
       let sort = data.sort ? data.sort : 'asc';
 
       const response = await this.$axios.$get(
-         `/rest-rencana/page/page?sort=invitationDate,${sort}&size=${size}`
+         `/rest-rencana/page?sort=scheduleDate,${sort}&size=${size}`
       );
       commit('SET_ALL_SCHEDULE', response);
    },

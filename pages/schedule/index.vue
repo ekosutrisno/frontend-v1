@@ -35,11 +35,11 @@
           <div class="flex flex-col items-start justify-between">
             <span class="text-xs">
               Page:
-              <span class="font-semibold">{{ 1}}</span>
+              <span class="font-semibold">{{ schedules.number +1}}</span>
             </span>
             <span class="text-xs">
               Total data:
-              <span class="font-semibold">{{2}}</span>
+              <span class="font-semibold">{{schedules.totalElements}}</span>
             </span>
           </div>
         </div>
@@ -98,7 +98,8 @@ export default {
   layout: 'dashboard',
   components: { CardSchedule },
   data: () => ({
-    scheduleDate: ''
+    scheduleDate: '',
+    pages: 10
   }),
   computed: {
     ...mapState({

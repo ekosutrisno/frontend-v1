@@ -17,7 +17,10 @@ import LoadingCustom from '@/components/LoadingCustom';
 import BackArrow from '@/components/dashboard/BackArrow';
 export default {
   layout: 'dashboard',
-  components: { LoadingCustom, BackArrow }
+  components: { LoadingCustom, BackArrow },
+  data: () => ({
+    isLoading: false
+  })
 };
 </script>
 
