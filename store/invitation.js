@@ -50,24 +50,19 @@ export const actions = {
 
       commit('SET_SINGLE_EDIT_INVITATION', response);
    },
-   async addDataInvitation({ commit }, data) {
+   async addDataInvitation({ dispatch }, data) {
       await this.$axios.$post(`/rest-undangan/`, data);
-
-      const response = await this.$axios.$get(`/rest-undangan/page`);
-      commit('SET_ALL_INVITATION', response);
+      dispatch("loadAllInvitation");
    },
-   async updateDataInvitation({ commit }, data) {
+   async updateDataInvitation({ dispatch }, data) {
       await this.$axios.$put(`/rest-undangan/${data.id}`, data.invitation);
-
-      const response = await this.$axios.$get(`/rest-undangan/page`);
-      commit('SET_ALL_INVITATION', response);
+      dispatch("loadAllInvitation");
    },
-   async deleteInvitation({ commit }, idInvitation) {
+   async deleteInvitation({ dispatch }, idInvitation) {
       if (idInvitation)
          await this.$axios.$delete(`/rest-undangan/${idInvitation}`);
       else return;
 
-      const response = await this.$axios.$get(`/rest-undangan/page`);
-      commit('SET_ALL_INVITATION', response);
+      dispatch("loadAllInvitation");
    }
 };

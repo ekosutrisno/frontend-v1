@@ -7,8 +7,7 @@
     >
       <LoadingCustom />
     </div>
-    <a href="http://oc-exoapp.herokuapp.com/" class="btn rounded">TESTING</a>
-    {{this.$route.params.id}}
+    <p class="font-semibold text-2xl text-pink-700">Edit Page</p>
   </div>
 </template>
 
@@ -17,7 +16,10 @@ import LoadingCustom from '@/components/LoadingCustom';
 import BackArrow from '@/components/dashboard/BackArrow';
 export default {
   layout: 'dashboard',
-  components: { LoadingCustom, BackArrow }
+  components: { LoadingCustom, BackArrow },
+  data: () => ({
+    isLoading: false
+  })
 };
 </script>
 

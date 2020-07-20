@@ -1,6 +1,8 @@
 <template>
   <div class="mx-auto">
-    <div class="flex dark:shadow-lg w-full p-3 items-center justify-between rounded-lg border border-gray-400 dark:border-gray-800">
+    <div
+      class="flex dark:shadow-lg w-full p-3 items-center justify-between rounded-lg border border-gray-400 dark:border-gray-800"
+    >
       <div class="inline-flex items-center space-x-2">
         <FormulateInput
           name="employee"
@@ -17,24 +19,28 @@
         />
         {{invitationDate}}
       </div>
-      <div class="inline-flex hidden sm:inline-flex">
-        <div
-          class="flex items-center mr-4"
-          style="margin-bottom:1px"
-        >
+      <div class="hidden sm:inline-flex">
+        <div class="flex items-center mr-4" style="margin-bottom:1px">
           <nuxt-link
             v-tooltip="{ content: 'Add Invitation', classes: 'text-xs' }"
             :to="{name:'invitation-insert'}"
-            class="py-2 px-4 rounded w-full sm:w-auto rounded-sm focus:outline-none font-medium text-gray-font bg-green-secondary hover:bg-green-light"
-          ><i class="fa fa-plus"></i>
+            class="py-2 px-4 rounded w-full sm:w-auto focus:outline-none font-medium text-gray-font bg-green-secondary hover:bg-green-light"
+          >
+            <i class="fa fa-plus"></i>
           </nuxt-link>
         </div>
 
         <div class="mr-4">
           <div class="mb-2 font-medium">Info page</div>
           <div class="flex flex-col items-start justify-between">
-            <span class="text-xs">Page: <span class="font-semibold">{{invitations.number + 1}}</span></span>
-            <span class="text-xs">Total data: <span class="font-semibold">{{invitations.totalElements}}</span></span>
+            <span class="text-xs">
+              Page:
+              <span class="font-semibold">{{invitations.number + 1}}</span>
+            </span>
+            <span class="text-xs">
+              Total data:
+              <span class="font-semibold">{{invitations.totalElements}}</span>
+            </span>
           </div>
         </div>
 
@@ -63,14 +69,12 @@
               v-tooltip="{ content: 'Order Ascending', classes: 'text-xs' }"
               @click="getNewDataPaging('asc')"
               class="fa fa-sort-amount-up-alt"
-            >
-            </i>
+            ></i>
             <i
               v-tooltip="{ content: 'Order Descending', classes: 'text-xs' }"
               @click="getNewDataPaging('desc')"
               class="fa fa-sort-amount-down"
-            >
-            </i>
+            ></i>
           </div>
         </div>
       </div>

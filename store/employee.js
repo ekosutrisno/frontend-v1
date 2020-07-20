@@ -6,7 +6,6 @@ export const state = () => ({
 });
 
 export const getters = {
-   banyakDataEmployee: state => state.employees.length
 };
 
 export const mutations = {
@@ -85,30 +84,27 @@ export const actions = {
 
       commit('SET_SINGLE_EDIT_EMPLOYEE', employeeSingleEdit);
    },
-   async addDataEmployee({ commit }, employee) {
+   async addDataEmployee({ dispatch }, employee) {
       if (employee) await this.$axios.$post(`/rest-biodata`, employee);
       else return;
 
-      const response = await this.$axios.$get(`/rest-biodata/page`);
-      commit('SET_DATA_EMPLOYEE', response);
+      dispatch("loadAllEmployee");
    },
-   async updateDataEmployee({ commit }, data) {
+   async updateDataEmployee({ dispatch }, data) {
       try {
          if (data.id && data.employee)
             await this.$axios.$put(`/rest-biodata/${data.id}`, data.employee);
          else return;
 
-         const response = await this.$axios.$get(`/rest-biodata/page`);
-         commit('SET_DATA_EMPLOYEE', response);
+         dispatch("loadAllEmployee");
       } catch (error) {
          console.log(error);
       }
    },
-   async deleteDataEmployee({ commit }, idEmployee) {
+   async deleteDataEmployee({ dispatch }, idEmployee) {
       if (idEmployee) await this.$axios.$delete(`/rest-biodata/${idEmployee}`);
       else return;
 
-      const response = await this.$axios.$get(`/rest-biodata/page`);
-      commit('SET_DATA_EMPLOYEE', response);
+      dispatch("loadAllEmployee");
    }
 };
