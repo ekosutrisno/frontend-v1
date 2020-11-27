@@ -110,7 +110,7 @@
             <span class="text-sm font-medium">{{invitation.notes}}</span>
           </div>
           <div
-            class="desclimer mt-3 py-2 px-4 rounded-lg bg-green-light dark:bg-green-secondary dark:shadow-lg"
+            class="desclimer mt-3 py-2 px-4 rounded-lg text-gray-200 bg-green-light dark:bg-green-secondary dark:shadow-lg"
           >
             <span class="text-lg font-bold">&bull; Status:</span>
             <span class="text-sm font-medium">{{invitation.status}}</span>

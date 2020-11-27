@@ -2,7 +2,7 @@
   <div class="box-border">
     <!-- Header  -->
     <div
-      class="hidden lg:flex sticky top-0 left-0 items-center justify-between px-6 py-4 bg-white shadow-lg"
+      class="hidden lg:flex sticky top-0 left-0 items-center justify-between px-6 py-4 bg-white border-b"
     >
       <div class="flex items-center justify-between space-x-6">
         <img
@@ -101,13 +101,11 @@
           :key="testi.id"
           class="w-full lg:w-1/3 h-full p-5 mb-5 lg:mb-0 flex flex-col cursor-pointer items-center shadow bg-gray-100 rounded transition-shadow ease-linear duration-100 hover:shadow-2xl"
         >
-          <div class="rounded-full w-32 h-32 overflow-hidden border-4 border-gray-300">
-            <img :src="testi.img" class="w-full h-full object-cover" alt="img-testimonial" />
-          </div>
+            <img :src="testi.img" class="w-32 h-32 object-cover rounded-full" alt="img-testimonial" />
           <div class="text-center text-2xl">{{testi.name}}</div>
           <div class="text-center text-lg text-blue-700 mb-5">{{testi.bootcamp}}</div>
           <div class="p-5 text-center">"{{testi.testimonial}}"</div>
-          <div class="my-3 text-center space-x-2">
+          <div class="my-3 text-center text-gray-700 space-x-2">
             <span class="text-xl hover:text-green-secondary">
               <i class="fab fa-github"></i>
             </span>
@@ -172,19 +170,19 @@
         <span class="block mb-3">PT Xsis Mitra Utama</span>
         <span class="text-2xl">
           <i
-            class="fab fa-fw fa-twitter cursor-pointer hover:text-green-secondary transition-colors duration-150 ease-in-out"
+            class="fab fa-fw fa-twitter cursor-pointer text-gray-600 hover:text-green-secondary transition-colors duration-150 ease-in-out"
           ></i>
           <i
-            class="fab fa-fw fa-facebook cursor-pointer hover:text-green-secondary transition-colors duration-150 ease-in-out"
+            class="fab fa-fw fa-facebook cursor-pointer text-gray-600 hover:text-green-secondary transition-colors duration-150 ease-in-out"
           ></i>
           <i
-            class="fab fa-fw fa-instagram cursor-pointer hover:text-green-secondary transition-colors duration-150 ease-in-out"
+            class="fab fa-fw fa-instagram cursor-pointer text-gray-600 hover:text-green-secondary transition-colors duration-150 ease-in-out"
           ></i>
           <i
-            class="fab fa-fw fa-linkedin cursor-pointer hover:text-green-secondary transition-colors duration-150 ease-in-out"
+            class="fab fa-fw fa-linkedin cursor-pointer text-gray-600 hover:text-green-secondary transition-colors duration-150 ease-in-out"
           ></i>
           <i
-            class="fab fa-fw fa-youtube cursor-pointer hover:text-green-secondary transition-colors duration-150 ease-in-out"
+            class="fab fa-fw fa-youtube cursor-pointer text-gray-600 hover:text-green-secondary transition-colors duration-150 ease-in-out"
           ></i>
         </span>
       </div>
@@ -240,7 +238,7 @@ export default {
         name: 'Yasdiqul Amin',
         bootcamp: 'PHP Bootcamp',
         img:
-          'https://s3.amazonaws.com/uifaces/faces/twitter/sergeyalmone/128.jpg'
+          'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60'
       },
       {
         id: 2,
@@ -248,7 +246,7 @@ export default {
           "It's amazing, Right here you got best leader and pretty much friendly employer, Absolutly you just have to join super bootcamp if you wanna be a real programmer.",
         name: 'Sahid Triambudi',
         bootcamp: 'PHP Bootcamp',
-        img: 'https://s3.amazonaws.com/uifaces/faces/twitter/matt3224/128.jpg'
+        img: 'https://images.unsplash.com/photo-1563237023-b1e970526dcb?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8dXNlcnxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60'
       },
       {
         id: 3,
@@ -256,7 +254,7 @@ export default {
           "It's amazing, Right here you got best leader and pretty much friendly employer, Absolutly you just have to join super bootcamp if you wanna be a real programmer.",
         name: 'Anom Pradonggo',
         bootcamp: 'Java Bootcamp',
-        img: 'https://s3.amazonaws.com/uifaces/faces/twitter/ssiskind/128.jpg'
+        img: 'https://images.unsplash.com/photo-1597223557154-721c1cecc4b0?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NXx8ZmFjZXxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60'
       }
     ]
   })
